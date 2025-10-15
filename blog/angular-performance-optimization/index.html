@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización de Rendimiento en Angular: Técnicas Avanzadas</title>
+    <meta name="description" content="Aprende a optimizar aplicaciones Angular con lazy loading, change detection OnPush y técnicas avanzadas de performance.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Optimización de Rendimiento en Angular: Técnicas Avanzadas">
+    <meta property="og:description" content="Aprende a optimizar aplicaciones Angular con lazy loading, change detection OnPush y técnicas avanzadas de performance.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-performance.png">
+    <meta property="og:url" content="https://asepulvedadev.github.io/angular-code-templates/blog/angular-performance-optimization">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Optimización de Rendimiento en Angular: Técnicas Avanzadas">
+    <meta name="twitter:description" content="Aprende a optimizar aplicaciones Angular con lazy loading, change detection OnPush y técnicas avanzadas de performance.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-performance.png">
+
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <article class="blog-post">
+        <header class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category">Performance</span>
+                <span class="blog-date">15 Oct 2025</span>
+                <span class="blog-read-time">6 min read</span>
+            </div>
+            <h1>Optimización de Rendimiento en Angular: Técnicas Avanzadas</h1>
+            <p class="blog-subtitle">Aprende a optimizar aplicaciones Angular con lazy loading, change detection OnPush y técnicas avanzadas de performance.</p>
+        </header>
+
+        <div class="blog-content">
+            <div class="blog-image">
+                <img src="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-performance.png"
+                     alt="Angular Performance Optimization" loading="lazy">
+            </div>
+
+            <h2>¿Por qué es Importante el Rendimiento en Angular?</h2>
+            <p>El rendimiento de una aplicación Angular puede marcar la diferencia entre una experiencia de usuario fluida y una aplicación lenta que frustra a los usuarios. Con el <strong>Angular Performance Optimizer</strong>, puedes implementar técnicas avanzadas de optimización automáticamente.</p>
+
+            <h2>Técnicas de Optimización Principales</h2>
+
+            <h3>1. Lazy Loading de Rutas</h3>
+            <p>Divide tu aplicación en chunks más pequeños que se cargan bajo demanda:</p>
+            <div class="code-example">
+                <pre><code class="language-typescript">// app.routes.ts
+export const routes: Routes = [
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/dashboard.component')
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.routes')
+  }
+];</code></pre>
+            </div>
+
+            <h3>2. Change Detection Optimizada</h3>
+            <p>Usa OnPush change detection para reducir ciclos de detección innecesarios:</p>
+            <div class="code-example">
+                <pre><code class="language-typescript">@Component({
+  selector: 'app-user-list',
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
+    <ul>
+      <li *ngFor="let user of users(); trackBy: trackByUserId">
+        {{ user.name }}
+      </li>
+    </ul>
+  `
+})
+export class UserListComponent {
+  users = input.required<User[]>();
+
+  trackByUserId(index: number, user: User): string {
+    return user.id;
+  }
+}</code></pre>
+            </div>
+
+            <h3>3. Virtual Scrolling para Listas Grandes</h3>
+            <p>Renderiza solo los elementos visibles en listas grandes:</p>
+            <div class="code-example">
+                <pre><code class="language-typescript">// En el template
+<cdk-virtual-scroll-viewport itemSize="50" class="viewport">
+  <div *cdkVirtualFor="let item of items; trackBy: trackByFn"
+       class="item">
+    {{ item.name }}
+  </div>
+</cdk-virtual-scroll-viewport></code></pre>
+            </div>
+
+            <h3>4. Bundle Splitting Inteligente</h3>
+            <p>Divide el código en chunks optimizados:</p>
+            <div class="code-example">
+                <pre><code class="language-typescript">// webpack.config.js
+optimization: {
+  splitChunks: {
+    chunks: 'all',
+    cacheGroups: {
+      vendor: {
+        test: /[\\/]node_modules[\\/]/,
+        name: 'vendors',
+        chunks: 'all',
+      },
+      angular: {
+        test: /[\\/]node_modules[\\/]@angular[\\/]/,
+        name: 'angular',
+        chunks: 'all',
+      }
+    }
+  }
+}</code></pre>
+            </div>
+
+            <h2>Métricas de Rendimiento Clave</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">LCP</div>
+                    <div class="metric-label">Largest Contentful Paint</div>
+                    <div class="metric-desc">< 2.5s recomendado</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">FID</div>
+                    <div class="metric-label">First Input Delay</div>
+                    <div class="metric-desc">< 100ms recomendado</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">CLS</div>
+                    <div class="metric-label">Cumulative Layout Shift</div>
+                    <div class="metric-desc">< 0.1 recomendado</div>
+                </div>
+            </div>
+
+            <h2>El Angular Performance Optimizer en Acción</h2>
+            <p>El agente especializado analiza tu código y aplica automáticamente:</p>
+            <ul class="optimizer-features">
+                <li><strong>📊 Análisis de Bundle:</strong> Identifica dependencias innecesarias y oportunidades de tree-shaking</li>
+                <li><strong>🔄 Optimización de Change Detection:</strong> Convierte componentes a OnPush cuando es seguro</li>
+                <li><strong>🗂️ Lazy Loading Automático:</strong> Configura rutas lazy-loaded para módulos pesados</li>
+                <li><strong>💾 Gestión de Memoria:</strong> Detecta y previene memory leaks en observables</li>
+                <li><strong>⚡ Web Vitals:</strong> Optimiza para Core Web Vitals y mejores prácticas de performance</li>
+            </ul>
+
+            <div class="cta-section">
+                <h2>¡Optimiza tu App Angular!</h2>
+                <p>Mejora el rendimiento de tu aplicación con técnicas avanzadas de optimización.</p>
+                <a href="/" class="cta-button">Comenzar Optimización</a>
+            </div>
+        </div>
+
+        <footer class="blog-footer">
+            <div class="blog-tags">
+                <span class="tag">Angular</span>
+                <span class="tag">Performance</span>
+                <span class="tag">Lazy Loading</span>
+                <span class="tag">Change Detection</span>
+                <span class="tag">RxJS</span>
+            </div>
+
+            <div class="blog-navigation">
+                <a href="/" class="nav-link back-home">← Volver al Inicio</a>
+                <a href="/blog" class="nav-link view-all">Ver Todos los Artículos</a>
+            </div>
+        </footer>
+    </article>
+
+    <script src="../js/blog-loader.js"></script>
+</body>
+</html>

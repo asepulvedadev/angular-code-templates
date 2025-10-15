@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Component Generator: Creando Componentes Optimizados con IA</title>
+    <meta name="description" content="Descubre cómo el generador de componentes Angular crea componentes standalone, optimizados y siguiendo las mejores prácticas del framework.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Angular Component Generator: Creando Componentes Optimizados con IA">
+    <meta property="og:description" content="Descubre cómo el generador de componentes Angular crea componentes standalone, optimizados y siguiendo las mejores prácticas del framework.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-component-generator.png">
+    <meta property="og:url" content="https://asepulvedadev.github.io/angular-code-templates/blog/angular-component-generator">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Angular Component Generator: Creando Componentes Optimizados con IA">
+    <meta name="twitter:description" content="Descubre cómo el generador de componentes Angular crea componentes standalone, optimizados y siguiendo las mejores prácticas del framework.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-component-generator.png">
+
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <article class="blog-post">
+        <header class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category">Angular</span>
+                <span class="blog-date">15 Oct 2025</span>
+                <span class="blog-read-time">4 min read</span>
+            </div>
+            <h1>Angular Component Generator: Creando Componentes Optimizados con IA</h1>
+            <p class="blog-subtitle">Descubre cómo el generador de componentes Angular crea componentes standalone, optimizados y siguiendo las mejores prácticas del framework.</p>
+        </header>
+
+        <div class="blog-content">
+            <div class="blog-image">
+                <img src="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-component-generator.png"
+                     alt="Angular Component Generator" loading="lazy">
+            </div>
+
+            <h2>¿Qué es el Angular Component Generator?</h2>
+            <p>El <strong>Angular Component Generator</strong> es un agente especializado de IA diseñado específicamente para crear componentes Angular que siguen las mejores prácticas del framework. Utiliza técnicas avanzadas de IA para generar código optimizado, mantenible y escalable.</p>
+
+            <h2>Características Principales</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎯 Componentes Standalone</h3>
+                    <p>Genera componentes que no dependen de módulos NgModule, aprovechando las características modernas de Angular 14+.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Signals Integration</h3>
+                    <p>Integra automáticamente signals de Angular 16+ para una gestión de estado reactiva y eficiente.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 TypeScript Estricto</h3>
+                    <p>Aplica configuración estricta de TypeScript para mayor seguridad de tipos y menos errores en runtime.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎨 Change Detection Optimizada</h3>
+                    <p>Configura automáticamente ChangeDetectionStrategy.OnPush para mejor rendimiento.</p>
+                </div>
+            </div>
+
+            <h2>Ejemplo de Componente Generado</h2>
+            <div class="code-example">
+                <pre><code class="language-typescript">// user-profile.component.ts
+import { Component, input, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-user-profile',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div class="user-profile">
+      <div class="user-avatar">
+        <img [src]="user().avatar" [alt]="user().name" />
+      </div>
+      <div class="user-info">
+        <h3>{{ user().name }}</h3>
+        <p>{{ user().email }}</p>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: #f8f9fa;
+    }
+
+    .user-avatar img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .user-info h3 {
+      margin: 0 0 0.25rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .user-info p {
+      margin: 0;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+  `],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class UserProfileComponent {
+  // Input signal para datos reactivos
+  user = input.required<User>();
+
+  // Signals internos para estado local
+  private isLoading = signal(false);
+
+  // Métodos del componente
+  onEditProfile() {
+    // Lógica para editar perfil
+  }
+}</code></pre>
+            </div>
+
+            <h2>Beneficios del Generador</h2>
+            <ul class="benefits-list">
+                <li><strong>⚡ Rendimiento Optimizado:</strong> Change detection OnPush y lazy loading automático</li>
+                <li><strong>🔧 Mantenibilidad:</strong> Código limpio, bien estructurado y documentado</li>
+                <li><strong>🎯 Escalabilidad:</strong> Componentes diseñados para crecer con tu aplicación</li>
+                <li><strong>🧪 Testeabilidad:</strong> Estructura que facilita la escritura de pruebas unitarias</li>
+                <li><strong>♿ Accesibilidad:</strong> Incluye atributos ARIA y mejores prácticas de accesibilidad</li>
+            </ul>
+
+            <h2>Cómo Usar el Generador</h2>
+            <div class="usage-guide">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Instalar el Agente</h3>
+                        <pre><code>npx angular-code-templates@latest --agent angular/component-generator</code></pre>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Generar Componente</h3>
+                        <p>Describe el componente que necesitas y el agente lo creará automáticamente.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Personalizar y Optimizar</h3>
+                        <p>El componente generado incluye todas las mejores prácticas y está listo para usar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>¡Prueba Angular Code Templates!</h2>
+                <p>Comienza a crear componentes Angular optimizados con IA hoy mismo.</p>
+                <a href="/" class="cta-button">Explorar Componentes</a>
+            </div>
+        </div>
+
+        <footer class="blog-footer">
+            <div class="blog-tags">
+                <span class="tag">Angular</span>
+                <span class="tag">Componentes</span>
+                <span class="tag">Standalone</span>
+                <span class="tag">Signals</span>
+                <span class="tag">TypeScript</span>
+            </div>
+
+            <div class="blog-navigation">
+                <a href="/" class="nav-link back-home">← Volver al Inicio</a>
+                <a href="/blog" class="nav-link view-all">Ver Todos los Artículos</a>
+            </div>
+        </footer>
+    </article>
+
+    <script src="../js/blog-loader.js"></script>
+</body>
+</html>
