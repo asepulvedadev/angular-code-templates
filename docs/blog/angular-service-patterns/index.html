@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrones de Servicios en Angular: Arquitectura y Mejores Prácticas</title>
+    <meta name="description" content="Explora los patrones de diseño para servicios Angular, incluyendo inyección de dependencias, RxJS y gestión de estado.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Patrones de Servicios en Angular: Arquitectura y Mejores Prácticas">
+    <meta property="og:description" content="Explora los patrones de diseño para servicios Angular, incluyendo inyección de dependencias, RxJS y gestión de estado.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-services.png">
+    <meta property="og:url" content="https://asepulvedadev.github.io/angular-code-templates/blog/angular-service-patterns">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patrones de Servicios en Angular: Arquitectura y Mejores Prácticas">
+    <meta name="twitter:description" content="Explora los patrones de diseño para servicios Angular, incluyendo inyección de dependencias, RxJS y gestión de estado.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-services.png">
+
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <article class="blog-post">
+        <header class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category">Arquitectura</span>
+                <span class="blog-date">15 Oct 2025</span>
+                <span class="blog-read-time">5 min read</span>
+            </div>
+            <h1>Patrones de Servicios en Angular: Arquitectura y Mejores Prácticas</h1>
+            <p class="blog-subtitle">Explora los patrones de diseño para servicios Angular, incluyendo inyección de dependencias, RxJS y gestión de estado.</p>
+        </header>
+
+        <div class="blog-content">
+            <div class="blog-image">
+                <img src="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-services.png"
+                     alt="Angular Service Patterns" loading="lazy">
+            </div>
+
+            <h2>La Importancia de los Servicios en Angular</h2>
+            <p>Los servicios en Angular son la columna vertebral de la arquitectura de aplicaciones. El <strong>Angular Service Generator</strong> crea servicios que manejan lógica de negocio, comunicación con APIs y gestión de estado de manera eficiente y mantenible.</p>
+
+            <h2>Patrones de Diseño Principales</h2>
+
+            <h3>1. Patrón Repository</h3>
+            <p>Abstrae el acceso a datos detrás de una interfaz consistente:</p>
+            <div class="code-example">
+                <pre><code class="language-typescript">// user.repository.ts
+@Injectable({
+  providedIn: 'root'
+})
+export class UserRepository {
+  constructor(private http: HttpClient) {}
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>('/api/users');
+  }
+
+  getUserById(id: string): Observable<User> {
+    return this.http.get<User>(`/api/users/${id}`);
+  }
+
+  createUser(user: CreateUserRequest): Observable<User> {
+    return this.http.post<User>('/api/users', user);
+  }
+
+  updateUser(id: string, user: UpdateUserRequest): Observable<User> {
+    return this.http.put<User>(`/api/users/${id}`, user);
+  }
+
+  deleteUser(id: string): Observable<void> {
+    return this.http.delete<void>(`/api/users/${id}`);
+  }
+}</code></pre>
+            </div>
+
+            <h3>2. Patrón Service Layer</h3>
+            <p>Separa la lógica de negocio de los componentes:</p>
+            <div class="code-example">
+                <pre><code class="language-typescript">// user.service.ts
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  private users$ = new BehaviorSubject<User[]>([]);
+  private loading$ = new BehaviorSubject<boolean>(false);
+
+  constructor(private userRepository: UserRepository) {}
+
+  get users(): Observable<User[]> {
+    return this.users$.asObservable();
+  }
+
+  get loading(): Observable<boolean> {
+    return this.loading$.asObservable();
+  }
+
+  loadUsers(): void {
+    this.loading$.next(true);
+    this.userRepository.getUsers()
+      .pipe(
+        tap(users => this.users$.next(users)),
+        finalize(() => this.loading$.next(false)),
+        catchError(error => {
+          console.error('Error loading users:', error);
+          return of([]);
+        })
+      )
+      .subscribe();
+  }
+
+  createUser(userData: CreateUserRequest): Observable<User> {
+    return this.userRepository.createUser(userData)
+      .pipe(
+        tap(newUser => {
+          const currentUsers = this.users$.value;
+          this.users$.next([...currentUsers, newUser]);
+        })
+      );
+  }
+}</code></pre>
+            </div>
+
+            <h3>3. Patrón Facade</h3>
+            <p>Simplifica interfaces complejas para los componentes:</p>
+            <div class="code-example">
+                <pre><code class="language-typescript">// data.facade.ts
+@Injectable({
+  providedIn: 'root'
+})
+export class DataFacade {
+  constructor(
+    private userService: UserService,
+    private productService: ProductService,
+    private orderService: OrderService
+  ) {}
+
+  // Métodos simplificados para componentes
+  loadDashboardData(): Observable<DashboardData> {
+    return combineLatest([
+      this.userService.getActiveUsers(),
+      this.productService.getTopProducts(),
+      this.orderService.getRecentOrders()
+    ]).pipe(
+      map(([users, products, orders]) => ({
+        users,
+        products,
+        orders
+      }))
+    );
+  }
+
+  saveUserProfile(profile: UserProfile): Observable<void> {
+    return this.userService.updateProfile(profile)
+      .pipe(
+        switchMap(() => this.productService.refreshUserProducts()),
+        map(() => void 0)
+      );
+  }
+}</code></pre>
+            </div>
+
+            <h2>Gestión de Estado con RxJS</h2>
+            <div class="state-patterns">
+                <div class="pattern-card">
+                    <h3>BehaviorSubject para Estado</h3>
+                    <pre><code>private state$ = new BehaviorSubject<AppState>(initialState);
+readonly state$ = this.state$.asObservable();</code></pre>
+                </div>
+
+                <div class="pattern-card">
+                    <h3>ReplaySubject para Eventos</h3>
+                    <pre><code>private events$ = new ReplaySubject<AppEvent>(10);
+readonly events$ = this.events$.asObservable();</code></pre>
+                </div>
+
+                <div class="pattern-card">
+                    <h3>Subject para Comandos</h3>
+                    <pre><code>private commands$ = new Subject<Command>();
+execute(command: Command) { this.commands$.next(command); }</code></pre>
+                </div>
+            </div>
+
+            <h2>Manejo de Errores Robusto</h2>
+            <div class="code-example">
+                <pre><code class="language-typescript">// error-handler.service.ts
+@Injectable({
+  providedIn: 'root'
+})
+export class ErrorHandlerService {
+  private errors$ = new Subject<AppError>();
+
+  get errors(): Observable<AppError> {
+    return this.errors$.asObservable();
+  }
+
+  handleError(error: any, context?: string): Observable<never> {
+    const appError = this.mapToAppError(error, context);
+    this.errors$.next(appError);
+
+    // Log to external service
+    this.logError(appError);
+
+    return throwError(() => appError);
+  }
+
+  private mapToAppError(error: any, context?: string): AppError {
+    if (error instanceof HttpErrorResponse) {
+      return {
+        type: 'HTTP_ERROR',
+        message: error.message,
+        status: error.status,
+        context
+      };
+    }
+
+    return {
+      type: 'UNKNOWN_ERROR',
+      message: error.message || 'An unknown error occurred',
+      context
+    };
+  }
+}</code></pre>
+            </div>
+
+            <h2>Beneficios del Angular Service Generator</h2>
+            <ul class="benefits-list">
+                <li><strong>🏗️ Arquitectura Sólida:</strong> Implementa patrones de diseño probados</li>
+                <li><strong>🔄 RxJS Optimizado:</strong> Manejo eficiente de operaciones asíncronas</li>
+                <li><strong>🧪 Testeabilidad:</strong> Servicios diseñados para pruebas unitarias</li>
+                <li><strong>📦 Reutilización:</strong> Servicios inyectables en múltiples componentes</li>
+                <li><strong>⚡ Performance:</strong> Lazy loading y gestión eficiente de memoria</li>
+            </ul>
+
+            <div class="cta-section">
+                <h2>¡Crea Servicios Profesionales!</h2>
+                <p>Implementa arquitectura robusta con servicios Angular optimizados.</p>
+                <a href="/" class="cta-button">Generar Servicios</a>
+            </div>
+        </div>
+
+        <footer class="blog-footer">
+            <div class="blog-tags">
+                <span class="tag">Angular</span>
+                <span class="tag">Servicios</span>
+                <span class="tag">RxJS</span>
+                <span class="tag">Inyección de Dependencias</span>
+                <span class="tag">Patrones</span>
+            </div>
+
+            <div class="blog-navigation">
+                <a href="/" class="nav-link back-home">← Volver al Inicio</a>
+                <a href="/blog" class="nav-link view-all">Ver Todos los Artículos</a>
+            </div>
+        </footer>
+    </article>
+
+    <script src="../js/blog-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialista en Rutas Angular: Navegación y Lazy Loading</title>
+    <meta name="description" content="Domina la configuración de rutas en Angular con lazy loading, guards, resolvers y mejores prácticas de navegación.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Especialista en Rutas Angular: Navegación y Lazy Loading">
+    <meta property="og:description" content="Domina la configuración de rutas en Angular con lazy loading, guards, resolvers y mejores prácticas de navegación.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-routing.png">
+    <meta property="og:url" content="https://asepulvedadev.github.io/angular-code-templates/blog/angular-routing-specialist">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Especialista en Rutas Angular: Navegación y Lazy Loading">
+    <meta name="twitter:description" content="Domina la configuración de rutas en Angular con lazy loading, guards, resolvers y mejores prácticas de navegación.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-routing.png">
+
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <article class="blog-post">
+        <header class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category">Routing</span>
+                <span class="blog-date">15 Oct 2025</span>
+                <span class="blog-read-time">5 min read</span>
+            </div>
+            <h1>Especialista en Rutas Angular: Navegación y Lazy Loading</h1>
+            <p class="blog-subtitle">Domina la configuración de rutas en Angular con lazy loading, guards, resolvers y mejores prácticas de navegación.</p>
+        </header>
+
+        <div class="blog-content">
+            <div class="blog-image">
+                <img src="https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/assets/angular-routing.png"
+                     alt="Angular Routing Specialist" loading="lazy">
+            </div>
+
+            <h2>El Sistema de Rutas en Angular</h2>
+            <p>El sistema de rutas de Angular es poderoso pero complejo. El <strong>Angular Routing Specialist</strong> configura automáticamente rutas optimizadas con lazy loading, guards de autenticación y resolvers de datos.</p>
+
+            <h2>Configuración de Rutas Optimizada</h2>
+
+            <h3>1. Rutas con Lazy Loading</h3>
+            <div class="code-example">
+                <pre><code class="language-typescript">// app.routes.ts
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/dashboard.component'),
+    title: 'Dashboard'
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.routes'),
+    canActivate: [AuthGuard],
+    data: { roles: ['admin'] }
+  },
+  {
+    path: 'profile',
+    loadComponent: () => import('./profile/profile.component'),
+    resolve: { user: UserResolver },
+    title: (route) => `Profile - ${route.params['id']}`
+  },
+  {
+    path: '**',
+    loadComponent: () => import('./not-found/not-found.component')
+  }
+];</code></pre>
+            </div>
+
+            <h3>2. Guards de Autenticación y Autorización</h3>
+            <div class="code-example">
+                <pre><code class="language-typescript">// auth.guard.ts
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthGuard implements CanActivate {
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean | UrlTree> {
+    return this.authService.isAuthenticated().pipe(
+      map(isAuthenticated => {
+        if (!isAuthenticated) {
+          return this.router.createUrlTree(['/login'], {
+            queryParams: { returnUrl: state.url }
+          });
+        }
+
+        // Check roles if specified
+        const requiredRoles = route.data['roles'] as string[];
+        if (requiredRoles) {
+          return this.authService.hasAnyRole(requiredRoles).pipe(
+            map(hasRole => hasRole || this.router.createUrlTree(['/unauthorized']))
+          );
+        }
+
+        return true;
+      })
+    );
+  }
+}</code></pre>
+            </div>
+
+            <h3>3. Resolvers para Precarga de Datos</h3>
+            <div class="code-example">
+                <pre><code class="language-typescript">// user.resolver.ts
+@Injectable({
+  providedIn: 'root'
+})
+export class UserResolver implements Resolve<User> {
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {}
+
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<User> {
+    const userId = route.params['id'];
+
+    return this.userService.getUserById(userId).pipe(
+      catchError(error => {
+        console.error('Error loading user:', error);
+        this.router.navigate(['/users']);
+        return of(null);
+      })
+    );
+  }
+}</code></pre>
+            </div>
+
+            <h2>Rutas Anidadas y Módulos Feature</h2>
+            <div class="code-example">
+                <pre><code class="language-typescript">// admin.routes.ts
+export const adminRoutes: Routes = [
+  {
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+      },
+      {
+        path: 'dashboard',
+        loadComponent: () => import('./dashboard/admin-dashboard.component')
+      },
+      {
+        path: 'users',
+        loadChildren: () => import('./users/users.routes')
+      },
+      {
+        path: 'settings',
+        loadComponent: () => import('./settings/admin-settings.component'),
+        canDeactivate: [UnsavedChangesGuard]
+      }
+    ]
+  }
+];</code></pre>
+            </div>
+
+            <h2>Guards Avanzados</h2>
+            <div class="guards-grid">
+                <div class="guard-card">
+                    <h3>CanActivate</h3>
+                    <p>Controla si se puede acceder a una ruta</p>
+                    <code>canActivate: [AuthGuard]</code>
+                </div>
+                <div class="guard-card">
+                    <h3>CanActivateChild</h3>
+                    <p>Controla acceso a rutas hijas</p>
+                    <code>canActivateChild: [AuthGuard]</code>
+                </div>
+                <div class="guard-card">
+                    <h3>CanDeactivate</h3>
+                    <p>Previene navegación con cambios sin guardar</p>
+                    <code>canDeactivate: [UnsavedGuard]</code>
+                </div>
+                <div class="guard-card">
+                    <h3>CanLoad</h3>
+                    <p>Controla carga lazy de módulos</p>
+                    <code>canLoad: [AuthGuard]</code>
+                </div>
+            </div>
+
+            <h2>Navegación Programática</h2>
+            <div class="code-example">
+                <pre><code class="language-typescript">// navigation.service.ts
+@Injectable({
+  providedIn: 'root'
+})
+export class NavigationService {
+  constructor(private router: Router) {}
+
+  navigateToUser(userId: string): void {
+    this.router.navigate(['/users', userId], {
+      queryParams: { tab: 'profile' },
+      fragment: 'top'
+    });
+  }
+
+  navigateWithState(): void {
+    this.router.navigate(['/dashboard'], {
+      state: { fromLogin: true }
+    });
+  }
+
+  goBack(): void {
+    // Custom back logic with confirmation
+    if (this.hasUnsavedChanges()) {
+      if (confirm('¿Perder cambios?')) {
+        this.location.back();
+      }
+    } else {
+      this.location.back();
+    }
+  }
+}</code></pre>
+            </div>
+
+            <h2>Optimizaciones de Performance</h2>
+            <ul class="performance-tips">
+                <li><strong>📦 Lazy Loading:</strong> Carga módulos bajo demanda para reducir bundle inicial</li>
+                <li><strong>🔄 Preloading:</strong> Precarga rutas críticas en segundo plano</li>
+                <li><strong>💾 Route Reuse:</strong> Reutiliza componentes para navegación rápida</li>
+                <li><strong>🎯 Route Guards:</strong> Evita navegación innecesaria con guards eficientes</li>
+                <li><strong>📊 Route Resolvers:</strong> Precarga datos antes de activar rutas</li>
+            </ul>
+
+            <div class="cta-section">
+                <h2>¡Configura Rutas Profesionales!</h2>
+                <p>Implementa navegación optimizada con lazy loading y guards avanzados.</p>
+                <a href="/" class="cta-button">Configurar Rutas</a>
+            </div>
+        </div>
+
+        <footer class="blog-footer">
+            <div class="blog-tags">
+                <span class="tag">Angular</span>
+                <span class="tag">Routing</span>
+                <span class="tag">Lazy Loading</span>
+                <span class="tag">Guards</span>
+                <span class="tag">Navigation</span>
+            </div>
+
+            <div class="blog-navigation">
+                <a href="/" class="nav-link back-home">← Volver al Inicio</a>
+                <a href="/blog" class="nav-link view-all">Ver Todos los Artículos</a>
+            </div>
+        </footer>
+    </article>
+
+    <script src="../js/blog-loader.js"></script>
+</body>
+</html>
