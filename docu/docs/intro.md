@@ -6,7 +6,7 @@ sidebar_position: 1
 
 **Claude Code Templates** is an open-source CLI tool that configures Claude Code projects and provides specialized components to enhance your AI-powered development workflow.
 
-Browse over 500 components at **[aitmpl.com](https://aitmpl.com)** or contribute to the project on **[GitHub](https://github.com/davila7/claude-code-templates)**.
+Browse over 500 components at **[aitmpl.com](https://aitmpl.com)** or contribute to the project on **[GitHub](https://github.com/asepulvedadev/angular-code-templates)**.
 
 ## What does this CLI do?
 

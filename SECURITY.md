@@ -50,7 +50,7 @@ When using Claude Code Templates:
 - **Maintainer**: Daniel Avila
 - **Website**: [danielavila.me](https://danielavila.me)
 - **Email**: [asepulvedadev@gmail.com](mailto:asepulvedadev@gmail.com)
-- **GitHub**: [@davila7](https://github.com/davila7)
+- **GitHub**: [@asepulvedadev](https://github.com/davila7)
 
 ## Legal
 

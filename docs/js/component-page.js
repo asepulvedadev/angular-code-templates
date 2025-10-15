@@ -318,7 +318,7 @@ class ComponentPageManager {
     }
 
     generateGitHubURL() {
-        let githubUrl = 'https://github.com/davila7/claude-code-templates/';
+        let githubUrl = 'https://github.com/asepulvedadev/angular-code-templates/';
         
         if (this.component.type === 'template') {
             githubUrl += `tree/main/cli-tool/templates/${this.component.folderPath || ''}`;
