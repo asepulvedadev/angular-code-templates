@@ -2,10 +2,10 @@
 [![npm downloads](https://img.shields.io/npm/dt/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/davila7/claude-code-templates/blob/main/CONTRIBUTING.md)
-[![GitHub stars](https://img.shields.io/github/stars/davila7/claude-code-templates.svg?style=social&label=Star)](https://github.com/davila7/claude-code-templates)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/asepulvedadev/angular-code-templates/blob/main/CONTRIBUTING.md)
+[![GitHub stars](https://img.shields.io/github/stars/asepulvedadev/angular-code-templates.svg?style=social&label=Star)](https://github.com/asepulvedadev/angular-code-templates)
 
-# Claude Code Templates
+# Angular Code Templates
 
 **CLI tool for configuring and monitoring Claude Code** - Quick setup for any project with framework-specific commands and real-time monitoring dashboard.
 
@@ -26,9 +26,9 @@ npx claude-code-templates@latest --health-check
 
 - **📋 Smart Project Setup** - Auto-detect and configure any project with framework-specific commands
 - **📊 Real-time Analytics** - Monitor Claude Code sessions with live state detection and performance metrics
-- **🔍 Health Check** - Comprehensive system validation with actionable recommendations
-- **🧩 Individual Components** - Install specialized agents, commands, and MCPs individually
-- **🌍 Global Agents** - Create AI agents accessible from anywhere using Claude Code SDK
+- **🔍 Health Check** - Comprehensive Angular project validation with actionable recommendations
+- **🧩 Individual Components** - Install specialized Angular agents, commands, and MCPs individually
+- **🌍 Global Agents** - Create AI agents accessible from anywhere using Claude Code SDK for Angular development
 
 ## 🎯 What You Get
 
@@ -36,7 +36,7 @@ npx claude-code-templates@latest --health-check
 |-----------|-------------|---------|
 | **CLAUDE.md** | Project-specific Claude Code configuration | Framework best practices, coding standards |
 | **Commands** | Custom slash commands for development tasks | `/generate-tests`, `/check-file`, `/optimize-bundle` |
-| **Agents** | AI specialists for specific domains | API security audit, React performance, database optimization |
+| **Agents** | AI specialists for Angular development | Component generation, service creation, routing setup, state management |
 | **MCPs** | External service integrations | GitHub, databases, development tools |
 | **Analytics** | Real-time monitoring dashboard | Live session tracking, usage statistics, exports |
 
@@ -44,7 +44,7 @@ npx claude-code-templates@latest --health-check
 
 | Language | Frameworks | Status |
 |----------|------------|---------|
-| **JavaScript/TypeScript** | React, Vue, Angular, Node.js | ✅ Ready |
+| **Angular** | Angular 14+, Standalone Components, Signals, RxJS | ✅ Ready |
 | **Python** | Django, Flask, FastAPI | ✅ Ready |
 | **Common** | Universal configurations | ✅ Ready |
 | **Go** | Gin, Echo, Fiber | 🚧 Coming Soon |
@@ -70,7 +70,7 @@ code-reviewer "Review this PR for security issues"
 |-------|-------|-------------|
 | `customer-support` | `customer-support "query"` | AI customer support specialist |
 | `api-security-audit` | `api-security-audit "analyze endpoints"` | Security auditing for APIs |
-| `react-performance-optimization` | `react-performance-optimization "optimize components"` | React performance expert |
+| `angular-performance-optimization` | `angular-performance-optimization "optimize components"` | Angular performance expert |
 | `database-optimization` | `database-optimization "improve queries"` | Database performance tuning |
 
 ### Global Agent Management
@@ -108,7 +108,7 @@ Quick links:
 
 ## 🤝 Contributing
 
-We welcome contributions! Browse available templates and components at **[aitmpl.com](https://aitmpl.com)**, then check our [contributing guidelines](https://github.com/davila7/claude-code-templates/blob/main/CONTRIBUTING.md).
+We welcome contributions! Browse available templates and components at **[aitmpl.com](https://aitmpl.com)**, then check our [contributing guidelines](https://github.com/asepulvedadev/angular-code-templates/blob/main/CONTRIBUTING.md).
 
 ## 📄 License
 
@@ -118,8 +118,8 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 
 - **🌐 Browse Components**: [aitmpl.com](https://aitmpl.com)
 - **📚 Documentation**: [docs.aitmpl.com](https://docs.aitmpl.com)
-- **🐛 Issues**: [GitHub Issues](https://github.com/davila7/claude-code-templates/issues)
-- **💬 Discussions**: [GitHub Discussions](https://github.com/davila7/claude-code-templates/discussions)
+- **🐛 Issues**: [GitHub Issues](https://github.com/asepulvedadev/angular-code-templates/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/asepulvedadev/angular-code-templates/discussions)
 
 ---
 

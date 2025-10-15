@@ -1,17 +1,17 @@
 {
-  "name": "claude-code-templates",
+  "name": "angular-code-templates",
   "version": "1.22.0",
-  "description": "CLI tool to setup Claude Code configurations with framework-specific commands, automation hooks and MCP Servers for your projects",
+  "description": "Angular Code Templates - Specialized CLI tool for Angular development with Claude Code, featuring Angular-specific agents, commands, and MCPs for enhanced development workflow",
   "main": "src/index.js",
   "bin": {
     "create-claude-config": "bin/create-claude-config.js",
-    "claude-code-templates": "bin/create-claude-config.js",
-    "claude-code-template": "bin/create-claude-config.js",
-    "claude-init": "bin/create-claude-config.js",
-    "cctemplates": "bin/create-claude-config.js",
-    "cct": "bin/create-claude-config.js",
-    "claude-setup": "bin/create-claude-config.js",
-    "claude-config": "bin/create-claude-config.js"
+    "angular-code-templates": "bin/create-claude-config.js",
+    "angular-code-template": "bin/create-claude-config.js",
+    "angular-init": "bin/create-claude-config.js",
+    "actemplates": "bin/create-claude-config.js",
+    "act": "bin/create-claude-config.js",
+    "angular-setup": "bin/create-claude-config.js",
+    "angular-config": "bin/create-claude-config.js"
   },
   "scripts": {
     "start": "node bin/create-claude-config.js",
@@ -29,15 +29,16 @@
     "test:node": "make test-node",
     "test:all": "npm run test:coverage && make test",
     "dev:link": "npm link",
-    "dev:unlink": "npm unlink -g claude-code-templates",
+    "dev:unlink": "npm unlink -g angular-code-templates",
     "pretest:commands": "npm run dev:link",
     "analytics:start": "node src/analytics.js",
     "analytics:test": "npm run test:analytics"
   },
   "keywords": [
-    "claude",
-    "claude-code",
-    "ai",
+    "angular",
+    "angular-cli",
+    "typescript",
+    "rxjs",
     "configuration",
     "template",
     "setup",
@@ -77,12 +78,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davila7/claude-code-templates.git"
+    "url": "git+https://github.com/asepulvedadev/angular-code-templates.git"
   },
   "bugs": {
-    "url": "https://github.com/davila7/claude-code-templates/issues"
+    "url": "https://github.com/asepulvedadev/angular-code-templates/issues"
   },
-  "homepage": "https://github.com/davila7/claude-code-templates#readme",
+  "homepage": "https://github.com/asepulvedadev/angular-code-templates#readme",
   "files": [
     "bin/",
     "src/",

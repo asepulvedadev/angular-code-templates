@@ -13,10 +13,10 @@ The security of our CLI tool and the templates it generates is our top priority.
 If you discover a security vulnerability in Claude Code Templates, please report it to us in one of the following ways:
 
 ### Email
-Send details of the vulnerability to [dan.avila7@gmail.com](mailto:dan.avila7@gmail.com) with the subject line "SECURITY: Claude Code Templates Vulnerability Report"
+Send details of the vulnerability to [asepulvedadev@gmail.com](mailto:asepulvedadev@gmail.com) with the subject line "SECURITY: Claude Code Templates Vulnerability Report"
 
 ### GitHub Security Advisories
-You can also report vulnerabilities through [GitHub Security Advisories](https://github.com/davila7/claude-code-templates/security/advisories/new) for this repository.
+You can also report vulnerabilities through [GitHub Security Advisories](https://github.com/asepulvedadev/angular-code-templates/security/advisories/new) for this repository.
 
 ## What to Include in Your Report
 
@@ -49,7 +49,7 @@ When using Claude Code Templates:
 
 - **Maintainer**: Daniel Avila
 - **Website**: [danielavila.me](https://danielavila.me)
-- **Email**: [dan.avila7@gmail.com](mailto:dan.avila7@gmail.com)
+- **Email**: [asepulvedadev@gmail.com](mailto:asepulvedadev@gmail.com)
 - **GitHub**: [@davila7](https://github.com/davila7)
 
 ## Legal

@@ -3,34 +3,34 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![GitHub stars](https://img.shields.io/github/stars/davila7/claude-code-templates.svg?style=social&label=Star)](https://github.com/davila7/claude-code-templates)
+[![GitHub stars](https://img.shields.io/github/stars/asepulvedadev/angular-code-templates.svg?style=social&label=Star)](https://github.com/asepulvedadev/angular-code-templates)
 [![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/hesreallyhim/awesome-claude-code)
 [![Buy Me a Coffee](https://img.shields.io/badge/☕-Buy%20me%20a%20coffee-ffdd00?style=flat&logo=buy-me-a-coffee)](https://buymeacoffee.com/daniavila)
 
 
 
-# Claude Code Templates (aitmpl.com)
+# Angular Code Templates (aitmpl.com)
 
-**Ready-to-use configurations for Anthropic's Claude Code.** A comprehensive collection of AI agents, custom commands, settings, hooks, external integrations (MCPs), and project templates to enhance your development workflow.
+**Ready-to-use configurations for Angular development with Claude Code.** A comprehensive collection of AI agents, custom commands, settings, hooks, external integrations (MCPs), and project templates specialized for Angular development workflow.
 
 ## Browse & Install Components and Templates
 
-**[Browse All Templates](https://aitmpl.com)** - Interactive web interface to explore and install 100+ agents, commands, settings, hooks, and MCPs.
+**[Browse All Templates](https://aitmpl.com)** - Interactive web interface to explore and install 100+ Angular-specialized agents, commands, settings, hooks, and MCPs.
 
 <img width="1049" height="855" alt="Screenshot 2025-08-19 at 08 09 24" src="https://github.com/user-attachments/assets/e3617410-9b1c-4731-87b7-a3858800b737" />
 
 ## 🚀 Quick Installation
 
 ```bash
-# Install a complete development stack
-npx claude-code-templates@latest --agent development-team/frontend-developer --command testing/generate-tests --mcp development/github-integration
+# Install a complete Angular development stack
+npx angular-code-templates@latest --agent angular/component-generator --command angular/generate-module --mcp angular/nx-integration
 
 # Browse and install interactively
 npx claude-code-templates@latest
 
-# Install specific components
-npx claude-code-templates@latest --agent business-marketing/security-auditor
-npx claude-code-templates@latest --command performance/optimize-bundle
+# Install specific Angular components
+npx angular-code-templates@latest --agent angular/routing-specialist
+npx angular-code-templates@latest --command angular/generate-service
 npx claude-code-templates@latest --setting performance/mcp-timeouts
 npx claude-code-templates@latest --hook git/pre-commit-validation
 npx claude-code-templates@latest --mcp database/postgresql-integration
@@ -89,7 +89,7 @@ npx claude-code-templates@latest --plugins
 
 ## Contributing
 
-We welcome contributions! **[Browse existing templates](https://aitmpl.com)** to see what's available, then check our [contributing guidelines](CONTRIBUTING.md) to add your own agents, commands, MCPs, settings, or hooks.
+We welcome contributions! **[Browse existing templates](https://aitmpl.com)** to see what's available, then check our [contributing guidelines](CONTRIBUTING.md) to add your own Angular-specialized agents, commands, MCPs, settings, or hooks.
 
 **Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.**
 
@@ -97,8 +97,8 @@ We welcome contributions! **[Browse existing templates](https://aitmpl.com)** to
 
 This collection includes components from multiple sources:
 
-**Agents Collection:**
-- **wshobson/agents Collection** by [wshobson](https://github.com/wshobson/agents) - Licensed under MIT License (48 agents)
+**Angular Agents Collection:**
+- **Angular Specialists Collection** - Specialized agents for Angular development, components, services, and state management
 
 **Commands Collection:**
 - **awesome-claude-code Commands** by [hesreallyhim](https://github.com/hesreallyhim/awesome-claude-code) - Licensed under CC0 1.0 Universal (21 commands)
@@ -111,16 +111,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **🌐 Browse Templates**: [aitmpl.com](https://aitmpl.com)
 - **📚 Documentation**: [docs.aitmpl.com](https://docs.aitmpl.com)
-- **💬 Community**: [GitHub Discussions](https://github.com/davila7/claude-code-templates/discussions)
-- **🐛 Issues**: [GitHub Issues](https://github.com/davila7/claude-code-templates/issues)
+- **💬 Community**: [GitHub Discussions](https://github.com/asepulvedadev/angular-code-templates/discussions)
+- **🐛 Issues**: [GitHub Issues](https://github.com/asepulvedadev/angular-code-templates/issues)
 
 ## ⭐ Star History
 
-<a href="https://star-history.com/#davila7/claude-code-templates&Date">
+<a href="https://star-history.com/#asepulvedadev/angular-code-templates&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=davila7/claude-code-templates&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=davila7/claude-code-templates&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=davila7/claude-code-templates&type=Date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=asepulvedadev/angular-code-templates&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=asepulvedadev/angular-code-templates&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=asepulvedadev/angular-code-templates&type=Date" />
   </picture>
 </a>
 
