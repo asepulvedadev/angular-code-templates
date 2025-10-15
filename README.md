@@ -1,5 +1,5 @@
-[![npm version](https://img.shields.io/npm/v/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)
-[![npm downloads](https://img.shields.io/npm/dt/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)
+[![npm version](https://img.shields.io/npm/v/angular-code-templates.svg)](https://www.npmjs.com/package/angular-code-templates)
+[![npm downloads](https://img.shields.io/npm/dt/angular-code-templates.svg)](https://www.npmjs.com/package/angular-code-templates)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -26,61 +26,61 @@
 npx angular-code-templates@latest --agent angular/component-generator --command angular/generate-module --mcp angular/nx-integration
 
 # Browse and install interactively
-npx claude-code-templates@latest
+npx angular-code-templates@latest
 
 # Install specific Angular components
 npx angular-code-templates@latest --agent angular/routing-specialist
 npx angular-code-templates@latest --command angular/generate-service
-npx claude-code-templates@latest --setting performance/mcp-timeouts
-npx claude-code-templates@latest --hook git/pre-commit-validation
-npx claude-code-templates@latest --mcp database/postgresql-integration
+npx angular-code-templates@latest --setting performance/mcp-timeouts
+npx angular-code-templates@latest --hook git/pre-commit-validation
+npx angular-code-templates@latest --mcp database/postgresql-integration
 ```
 
 ## What You Get
 
 | Component | Description | Examples |
 |-----------|-------------|----------|
-| **🤖 Agents** | AI specialists for specific domains | Security auditor, React performance optimizer, database architect |
-| **⚡ Commands** | Custom slash commands | `/generate-tests`, `/optimize-bundle`, `/check-security` |
-| **🔌 MCPs** | External service integrations | GitHub, PostgreSQL, Stripe, AWS, OpenAI |
+| **🤖 Agents** | AI specialists for Angular development | Angular component generator, routing specialist, state management expert |
+| **⚡ Commands** | Custom slash commands for Angular | `/generate-component`, `/generate-service`, `/optimize-bundle` |
+| **🔌 MCPs** | External service integrations | Nx, Angular DevKit, GitHub, PostgreSQL, Supabase |
 | **⚙️ Settings** | Claude Code configurations | Timeouts, memory settings, output styles |
 | **🪝 Hooks** | Automation triggers | Pre-commit validation, post-completion actions |
-| **📦 Templates** | Complete project configurations with CLAUDE.md, .claude/* files and .mcp.json | Framework-specific setups, project best practices |
+| **📦 Templates** | Complete Angular project configurations | Angular SPA, SSR, PWA, microfrontends with best practices |
 
 ## 🛠️ Additional Tools
 
-Beyond the template catalog, Claude Code Templates includes powerful development tools:
+Beyond the Angular template catalog, this toolkit includes powerful development tools:
 
 ### 📊 Claude Code Analytics
-Monitor your AI-powered development sessions in real-time with live state detection and performance metrics.
+Monitor your AI-powered Angular development sessions in real-time with live state detection and performance metrics.
 
 ```bash
-npx claude-code-templates@latest --analytics
+npx angular-code-templates@latest --analytics
 ```
 
-### 💬 Conversation Monitor  
+### 💬 Conversation Monitor
 Mobile-optimized interface to view Claude responses in real-time with secure remote access.
 
 ```bash
 # Local access
-npx claude-code-templates@latest --chats
+npx angular-code-templates@latest --chats
 
 # Secure remote access via Cloudflare Tunnel
-npx claude-code-templates@latest --chats --tunnel
+npx angular-code-templates@latest --chats --tunnel
 ```
 
 ### 🔍 Health Check
-Comprehensive diagnostics to ensure your Claude Code installation is optimized.
+Comprehensive diagnostics to ensure your Claude Code installation is optimized for Angular development.
 
 ```bash
-npx claude-code-templates@latest --health-check
+npx angular-code-templates@latest --health-check
 ```
 
 ### 🔌 Plugin Dashboard
 View marketplaces, installed plugins, and manage permissions from a unified interface.
 
 ```bash
-npx claude-code-templates@latest --plugins
+npx angular-code-templates@latest --plugins
 ```
 
 ## 📖 Documentation

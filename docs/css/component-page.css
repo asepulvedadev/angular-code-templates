@@ -348,8 +348,8 @@
     position: relative;
     z-index: 1;
     box-shadow: 
-        0 2px 8px rgba(217, 119, 6, 0.3),
-        0 4px 16px rgba(217, 119, 6, 0.15),
+        0 2px 8px rgba(221, 0, 49, 0.3),
+        0 4px 16px rgba(221, 0, 49, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -359,8 +359,8 @@
 .component-type-badge-title:hover {
     transform: translateY(-1px) scale(1.02);
     box-shadow: 
-        0 4px 12px rgba(217, 119, 6, 0.4),
-        0 8px 24px rgba(217, 119, 6, 0.2),
+        0 4px 12px rgba(221, 0, 49, 0.4),
+        0 8px 24px rgba(221, 0, 49, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
     filter: brightness(1.1);
 }
@@ -401,7 +401,7 @@
     background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
     transform: translateY(-1px);
     box-shadow: 
-        0 2px 8px rgba(217, 119, 6, 0.2),
+        0 2px 8px rgba(221, 0, 49, 0.2),
         0 4px 16px rgba(0, 0, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
@@ -413,7 +413,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(217, 119, 6, 0.05) 50%, transparent 70%);
+    background: linear-gradient(45deg, transparent 30%, rgba(221, 0, 49, 0.05) 50%, transparent 70%);
     border-radius: 12px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -1008,9 +1008,9 @@
         font-size: 1.8rem;
         animation-duration: 5s; /* Even slower animation for small screens */
         text-shadow: 
-            0 0 8px rgba(217, 119, 6, 0.3),
-            0 0 16px rgba(217, 119, 6, 0.2),
-            0 0 24px rgba(217, 119, 6, 0.1);
+            0 0 8px rgba(221, 0, 49, 0.3),
+            0 0 16px rgba(221, 0, 49, 0.2),
+            0 0 24px rgba(221, 0, 49, 0.1);
     }
     
     .component-title-info h1::before {
@@ -1038,8 +1038,8 @@
         padding: 0.25rem 0.6rem;
         border-radius: 12px;
         box-shadow: 
-            0 1px 4px rgba(217, 119, 6, 0.3),
-            0 2px 8px rgba(217, 119, 6, 0.1),
+            0 1px 4px rgba(221, 0, 49, 0.3),
+            0 2px 8px rgba(221, 0, 49, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
     

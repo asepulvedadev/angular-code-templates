@@ -15,9 +15,10 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'intro',
+    'cli-options',
     {
       type: 'category',
-      label: 'Discover Components',
+      label: 'Components',
       items: [
         'components/overview',
         'components/agents',
@@ -30,17 +31,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Additional Tools',
+      label: 'Tools',
       items: [
         'tools/overview',
         'tools/analytics',
         'tools/health-check',
         'tools/chats',
-        'tools/tunnel',
         'tools/sandbox',
+        'tools/tunnel',
       ],
     },
-    'cli-options',
     'safety-features',
     'support',
   ],

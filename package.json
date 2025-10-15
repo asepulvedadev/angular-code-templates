@@ -1,10 +1,11 @@
 {
-  "name": "claude-code-templates",
+  "name": "angular-code-templates",
   "version": "1.21.13",
-  "description": "Component templates and tracking system for Claude Code",
+  "description": "Angular-specialized component templates and tracking system for Claude Code - 600+ agents, commands, MCPs for Angular development",
   "main": "cli-tool/src/index.js",
   "bin": {
-    "claude-code-templates": "cli-tool/bin/create-claude-config.js",
+    "angular-code-templates": "cli-tool/bin/create-claude-config.js",
+    "act": "cli-tool/bin/create-claude-config.js",
     "cct": "cli-tool/bin/create-claude-config.js"
   },
   "scripts": {
@@ -32,12 +33,25 @@
     "@vercel/node": "^3.0.0"
   },
   "keywords": [
+    "angular",
+    "angular-cli",
+    "typescript",
+    "rxjs",
     "claude-code",
     "templates",
     "components",
+    "agents",
+    "commands",
+    "mcp",
+    "nx",
+    "angular-devkit",
+    "standalone-components",
+    "signals",
+    "state-management",
+    "ngrx",
     "tracking",
     "analytics"
   ],
-  "author": "Claude Code Templates",
+  "author": "Angular Code Templates",
   "license": "MIT"
 }

@@ -16,14 +16,14 @@ Agents are specialized AI assistants that understand specific domains and provid
 Install this component locally in your project. Works with your existing Claude Code setup.
 
 ```bash
-npx claude-code-templates@latest --agent development/frontend-developer --yes
+npx claude-code-templates@latest --agent angular/angular-component-generator --yes
 ```
 
 ### 🌍 Global Agent (Claude Code SDK)
 Create a global AI agent accessible from anywhere with zero configuration. Perfect for automation and CI/CD workflows.
 
 ```bash
-npx claude-code-templates@latest --create-agent development/frontend-developer
+npx claude-code-templates@latest --create-agent angular/angular-component-generator
 ```
 
 After installation, use from anywhere:
@@ -48,7 +48,7 @@ E2B_API_KEY=your_e2b_key_here
 [Get Anthropic API Key](https://console.anthropic.com/) | [Get E2B API Key](https://e2b.dev/)
 
 ```bash
-npx claude-code-templates@latest --sandbox e2b --agent development/frontend-developer --prompt "your development task"
+npx claude-code-templates@latest --sandbox e2b --agent angular/angular-component-generator --prompt "your development task"
 ```
 
 ☁️ Isolated cloud environment  
@@ -64,8 +64,8 @@ npx claude-code-templates@latest --sandbox e2b --agent development/frontend-deve
 
 Browse agents by specialty area to find the right expert for your needs:
 
-### Development
-Frontend, backend, and mobile development specialists. Examples: `frontend-developer` for React expertise, `backend-developer` for API development, `mobile-developer` for React Native and Flutter.
+### Angular Development
+Specialized Angular development agents. Examples: `angular-component-generator` for creating Angular components, `angular-service-generator` for services and APIs, `angular-performance-optimizer` for performance optimization.
 
 ### Security  
 Security auditing, penetration testing, and compliance experts. Examples: `security-auditor` for vulnerability assessment, `penetration-tester` for security testing, `compliance-specialist` for regulatory requirements.
@@ -84,10 +84,10 @@ Strategy, analysis, and business development specialists. Examples: `product-str
 Select agents based on your current needs and project context:
 
 ### By Technology Stack
-- **React projects**: Choose `frontend-developer` for component optimization and best practices
-- **API development**: Use `backend-developer` for server architecture and database design  
-- **Mobile apps**: Select `mobile-developer` for React Native or Flutter guidance
-- **Data projects**: Pick `data-scientist` for analysis and visualization
+- **Angular projects**: Choose `angular-component-generator` for component creation, `angular-service-generator` for services, `angular-performance-optimizer` for optimization
+- **API development**: Use `angular-service-generator` for HTTP services and data management
+- **Performance optimization**: Select `angular-performance-optimizer` for lazy loading and change detection
+- **Component development**: Pick `angular-component-generator` for reusable Angular components
 
 ### By Project Phase
 - **Starting new project**: Begin with `fullstack-developer` for overall architecture guidance

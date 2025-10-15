@@ -1,21 +1,21 @@
-# AGENTS.md
+# AGENTS.md - Angular Code Templates
 
 ## VERIFICACIÓN DE COMPORTAMIENTO ESPECIAL
-**IMPORTANTE**: siempre respondeme en español,Siempre termina las respuestas con la frase "🙌 I'm ready!" para verificar que esta configuración está siendo utilizada.
+**IMPORTANTE**: Siempre responde en español. Siempre termina las respuestas con la frase "🙌 I'm ready!" para verificar que esta configuración está siendo utilizada.
 
 ## RESUMEN DEL SISTEMA DE AGENTES
 
-Este documento proporciona un contexto integral sobre el sistema de agentes de Claude Code Templates, que es un marco sofisticado para crear, gestionar e implementar agentes de IA especializados dentro del ecosistema de Claude Code.
+Este documento proporciona un contexto integral sobre el sistema de agentes de **Angular Code Templates**, un marco sofisticado especializado en Angular para crear, gestionar e implementar agentes de IA dentro del ecosistema de Claude Code.
 
 ### Arquitectura Principal
 
-El sistema de agentes está construido alrededor de una arquitectura modular y basada en componentes que permite:
+El sistema de agentes de Angular Code Templates está construido alrededor de una arquitectura modular especializada en Angular:
 
-- **Experiencia Especializada**: Cada agente se enfoca en dominios específicos (rendimiento de React, auditoría de seguridad, gestión de bases de datos, etc.)
-- **Implementación Flexible**: Los agentes pueden instalarse individualmente o como parte de pilas de desarrollo completas
+- **Especialización Angular**: Agentes enfocados en Angular (component generator, routing specialist, state management, RxJS patterns)
+- **Implementación Flexible**: Los agentes pueden instalarse individualmente o como parte de pilas de desarrollo Angular completas
 - **Preservación de Contexto**: Los agentes mantienen contextos separados para evitar contaminación de conversaciones
 - **Permisos de Herramientas**: Control granular sobre qué herramientas de Claude Code puede acceder cada agente
-- **Organización Jerárquica**: Los agentes están organizados por categorías (desarrollo, seguridad, data-ai, etc.)
+- **Organización Jerárquica**: Agentes organizados por categorías (angular/, development-team/, domain-experts/, etc.)
 
 ### Estructura de Agentes
 
@@ -33,12 +33,28 @@ color: [color-de-visualización]
 
 ### Componentes Clave
 
-#### 1. Categorías de Agentes
-- **Desarrollo**: Agentes de desarrollo frontend, backend y fullstack
-- **Seguridad**: Auditoría de seguridad, evaluación de vulnerabilidades, cumplimiento
-- **Datos/IA**: Aprendizaje automático, análisis de datos, especialistas en integración de IA
-- **Negocios**: Marketing, gestión de proyectos, análisis de negocios
-- **DevOps**: Infraestructura, implementación, especialistas en monitoreo
+#### 1. Categorías de Agentes Angular
+
+**Agentes Específicos de Angular** (`agents/angular/`)
+- **Component Generator**: Generación de componentes Angular con best practices
+- **Service Specialist**: Creación de servicios y lógica de negocio
+- **Routing Specialist**: Configuración de rutas y navegación
+- **State Management Expert**: NgRx, Signals, RxJS state patterns
+- **Testing Specialist**: Unit tests, integration tests, E2E con Karma/Jasmine/Jest
+
+**Agentes de Desarrollo** (`agents/development-team/`)
+- Frontend, backend y fullstack developers
+- Angular performance optimizers
+- TypeScript specialists
+
+**Agentes de Dominio** (`agents/domain-experts/`)
+- Seguridad: Auditoría, vulnerabilidades, cumplimiento
+- Performance: Optimización, profiling, lazy loading
+- Accesibilidad: WCAG, ARIA, Angular CDK
+
+**Agentes de Negocio** (`agents/business-team/`)
+- Product managers, business analysts
+- UX/UI specialists for Angular applications
 
 #### 2. Tipos de Agentes
 - **Agentes de Proyecto**: Almacenados en `.claude/agents/` - disponibles dentro de proyectos específicos
@@ -46,10 +62,10 @@ color: [color-de-visualización]
 - **Agentes Globales**: Ejecutables desde cualquier lugar mediante integración con Claude Code SDK
 
 #### 3. Métodos de Instalación
-- **Individual**: `npx claude-code-templates@latest --agent nombre-agente`
-- **Lote**: Múltiples agentes en un solo comando
-- **Plantillas**: Pilas preconfiguradas incluyendo agentes, comandos y MCPs
-- **Sandbox**: Entornos aislados con integración de agentes
+- **Individual**: `npx angular-code-templates@latest --agent angular/component-generator`
+- **Lote**: `npx angular-code-templates@latest --agent angular/component-generator --agent angular/service-specialist`
+- **Plantillas Angular**: Pilas preconfiguradas para SPA, SSR, PWA con agentes especializados
+- **Interactivo**: `npx angular-code-templates@latest` para instalación guiada
 
 ### Características Avanzadas
 
@@ -73,11 +89,32 @@ Los agentes pueden acceder a herramientas internas de Claude Code con permisos c
 
 ### Flujo de Trabajo de Desarrollo
 
-#### Creando Nuevos Agentes
-1. **Fase de Diseño**: Definir límites de experiencia, condiciones de activación y casos de uso
-2. **Implementación**: Crear archivo Markdown con frontmatter y prompt del sistema apropiados
-3. **Pruebas**: Validar comportamiento e integración del agente
-4. **Documentación**: Agregar ejemplos y guías de uso integrales
+#### Creando Nuevos Agentes Angular
+1. **Fase de Diseño**: Definir especialización Angular, condiciones de activación y casos de uso
+2. **Implementación**: Crear archivo Markdown en `cli-tool/components/agents/angular/{nombre}.md`
+3. **Estructura del Agente**:
+```markdown
+---
+name: angular-component-name
+description: Use this agent when [Angular-specific conditions]. Specializes in [domain]. Examples: <example>...</example>
+color: blue
+---
+
+# Agent System Prompt
+You are an Angular specialist focusing on [domain]...
+
+## Expertise
+- Angular CLI
+- TypeScript best practices
+- RxJS patterns
+- Standalone components
+- Signals (Angular 16+)
+
+## Examples
+[Angular-specific examples]
+```
+4. **Pruebas**: Validar con proyectos Angular reales
+5. **Documentación**: Agregar ejemplos de uso con Angular CLI
 
 #### Implementación de Agentes
 1. **Registro de Componentes**: Agregar al directorio `cli-tool/components/agents/`
@@ -87,11 +124,12 @@ Los agentes pueden acceder a herramientas internas de Claude Code con permisos c
 
 ### Mejores Prácticas
 
-#### Diseño de Agentes
-- **Responsabilidad Única**: Cada agente debe sobresalir en una función primaria
-- **Límites Claros**: Bien definidos cuándo y cómo usar cada agente
-- **Ejemplos Integrales**: Múltiples escenarios de uso en el mundo real
-- **Optimización de Herramientas**: Otorgar solo permisos necesarios para tareas del agente
+#### Diseño de Agentes Angular
+- **Responsabilidad Única**: Cada agente debe sobresalir en un aspecto específico de Angular
+- **Límites Claros Angular**: Definir claramente cuándo usar cada agente Angular (ej: component vs service vs routing)
+- **Ejemplos Angular Reales**: Escenarios con Angular CLI, TypeScript, RxJS
+- **Optimización de Herramientas**: Permisos apropiados para Angular CLI, file operations, testing
+- **Compatibilidad de Versiones**: Especificar versiones de Angular soportadas (Angular 14+)
 
 #### Integración del Sistema
 - **Formato Consistente**: Seguir estándares YAML y Markdown establecidos
@@ -107,19 +145,92 @@ Los agentes pueden acceder a herramientas internas de Claude Code con permisos c
 
 ### Puntos de Integración
 
-#### Claude Code SDK
-- **Creación de Agentes Globales**: `npx claude-code-templates@latest --create-agent nombre-agente`
-- **Gestión de Agentes**: Listar, actualizar y remover agentes globales
-- **Ejecución Cross-Plataforma**: Agentes disponibles desde cualquier entorno de terminal
+#### Angular Code Templates SDK
+- **Creación de Agentes Globales**: `npx angular-code-templates@latest --create-agent angular-agent-name`
+- **Gestión de Agentes**: Listar, actualizar y remover agentes Angular globales
+- **Ejecución Cross-Plataforma**: Agentes Angular disponibles desde cualquier proyecto
+- **Instalación Local vs Global**: Agentes pueden instalarse a nivel de proyecto (`.claude/agents/`) o usuario (`~/.claude/agents/`)
 
-#### Ecosistema MCP
-- **Integración de Herramientas Externas**: Conectar a bases de datos, APIs y servicios especializados
+#### Ecosistema MCP para Angular
+- **Integraciones Angular**: Nx, Angular DevKit, Supabase para Angular
+- **Herramientas de Testing**: Karma, Jasmine, Jest integrations
+- **Build Tools**: Angular CLI, esbuild, Vite para Angular
 - **Cumplimiento de Protocolo**: Implementación completa del Model Context Protocol
-- **Gestión de Servidores**: Configurar y gestionar conexiones de servidores MCP
+- **Gestión de Servidores**: Configurar conexiones MCP específicas para proyectos Angular
 
 #### Herramientas de Desarrollo
 - **Sistema de Plantillas**: Entornos de desarrollo preconfigurados
 - **Integración de Comandos**: Agentes funcionan junto con comandos slash personalizados
 - **Coordinación de Configuraciones**: Comportamiento de agentes modificado por configuraciones globales y de proyecto
 
-Este sistema de agentes representa un enfoque integral para el desarrollo asistido por IA, combinando experiencia especializada con implementación flexible y capacidades de orquestación sofisticadas para mejorar el flujo de trabajo de desarrollo a través de múltiples dominios y tecnologías.
+## Ejemplos de Agentes Angular Especializados
+
+### Agent: `angular/component-generator`
+```markdown
+---
+name: angular-component-generator
+description: Use this agent when creating Angular components. Specializes in standalone components, signals, and best practices.
+color: blue
+---
+
+You are an Angular component specialist. Generate components following Angular best practices:
+- Standalone components (Angular 14+)
+- Signals for reactivity (Angular 16+)
+- OnPush change detection
+- TypeScript strict mode
+- Proper lifecycle hooks
+```
+
+### Agent: `angular/routing-specialist`
+```markdown
+---
+name: angular-routing-specialist
+description: Use this agent for Angular routing configuration. Specializes in lazy loading, guards, and route optimization.
+color: green
+---
+
+You are an Angular routing expert. Configure routing with:
+- Lazy loading modules
+- Route guards (CanActivate, CanDeactivate)
+- Resolvers for data pre-fetching
+- Route parameters and query params
+- Child routes and nested routing
+```
+
+### Agent: `angular/state-management-expert`
+```markdown
+---
+name: angular-state-management-expert
+description: Use this agent for state management in Angular. Specializes in NgRx, Signals, and RxJS patterns.
+color: purple
+---
+
+You are an Angular state management specialist. Implement state with:
+- NgRx Store, Effects, Selectors
+- Angular Signals (Angular 16+)
+- RxJS Subject patterns
+- Component Store
+- Service-based state management
+```
+
+## Instalación Rápida de Agentes Angular
+
+```bash
+# Instalar stack completo de agentes Angular
+npx angular-code-templates@latest \
+  --agent angular/component-generator \
+  --agent angular/service-specialist \
+  --agent angular/routing-specialist \
+  --agent angular/state-management-expert \
+  --agent angular/testing-specialist
+
+# Verificar instalación
+ls ~/.claude/agents/      # Agentes globales
+ls .claude/agents/        # Agentes de proyecto
+```
+
+## Conclusión
+
+Este sistema de agentes de **Angular Code Templates** representa un enfoque especializado para el desarrollo Angular asistido por IA, combinando experiencia profunda en Angular con implementación flexible y capacidades de orquestación sofisticadas para mejorar el flujo de trabajo de desarrollo con Angular, TypeScript, RxJS y el ecosistema completo de Angular.
+
+🙌 I'm ready!

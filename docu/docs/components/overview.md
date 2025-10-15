@@ -17,9 +17,9 @@ Browse and search over 500 Claude Code components on **[aitmpl.com](https://aitm
 
 ### 🤖 **Agents** (AI Specialists)
 ```bash
-npx claude-code-templates@latest --agent development/frontend-developer
-npx claude-code-templates@latest --agent security/security-auditor
-npx claude-code-templates@latest --agent data-ai/ml-engineer
+npx claude-code-templates@latest --agent angular/angular-component-generator
+npx claude-code-templates@latest --agent angular/angular-service-generator
+npx claude-code-templates@latest --agent angular/angular-performance-optimizer
 ```
 
 ### ⚡ **Commands** (Slash Commands)

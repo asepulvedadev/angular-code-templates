@@ -1,89 +1,98 @@
-[![npm version](https://img.shields.io/npm/v/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)
-[![npm downloads](https://img.shields.io/npm/dt/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)
+[![npm version](https://img.shields.io/npm/v/angular-code-templates.svg)](https://www.npmjs.com/package/angular-code-templates)
+[![npm downloads](https://img.shields.io/npm/dt/angular-code-templates.svg)](https://www.npmjs.com/package/angular-code-templates)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/asepulvedadev/angular-code-templates/blob/main/CONTRIBUTING.md)
 [![GitHub stars](https://img.shields.io/github/stars/asepulvedadev/angular-code-templates.svg?style=social&label=Star)](https://github.com/asepulvedadev/angular-code-templates)
 
-# Angular Code Templates
+# Angular Code Templates CLI
 
-**CLI tool for configuring and monitoring Claude Code** - Quick setup for any project with framework-specific commands and real-time monitoring dashboard.
+**CLI tool specialized for Angular development with Claude Code** - Quick setup for Angular projects with 600+ specialized agents, commands, and MCPs, plus real-time monitoring dashboard.
 
 ## 🚀 Quick Start
 
 ```bash
 # Interactive setup (recommended)
-npx claude-code-templates@latest
+npx angular-code-templates@latest
+
+# Install Angular-specific components
+npx angular-code-templates@latest --agent angular/component-generator
+npx angular-code-templates@latest --command angular/generate-service
 
 # Real-time analytics dashboard
-npx claude-code-templates@latest --analytics
+npx angular-code-templates@latest --analytics
 
-# System health check
-npx claude-code-templates@latest --health-check
+# System health check for Angular projects
+npx angular-code-templates@latest --health-check
 ```
 
 ## ✨ Core Features
 
-- **📋 Smart Project Setup** - Auto-detect and configure any project with framework-specific commands
+- **🅰️ Angular Specialization** - 600+ agents, 200+ commands specifically designed for Angular development
+- **📋 Smart Angular Setup** - Auto-detect Angular CLI, TypeScript, RxJS and configure with best practices
 - **📊 Real-time Analytics** - Monitor Claude Code sessions with live state detection and performance metrics
 - **🔍 Health Check** - Comprehensive Angular project validation with actionable recommendations
-- **🧩 Individual Components** - Install specialized Angular agents, commands, and MCPs individually
-- **🌍 Global Agents** - Create AI agents accessible from anywhere using Claude Code SDK for Angular development
+- **🧩 Individual Components** - Install specialized Angular agents (component-generator, routing-specialist, etc.)
+- **🌍 Global Angular Agents** - Create AI agents for Angular workflows accessible from anywhere
 
 ## 🎯 What You Get
 
-| Component | Description | Example |
-|-----------|-------------|---------|
-| **CLAUDE.md** | Project-specific Claude Code configuration | Framework best practices, coding standards |
-| **Commands** | Custom slash commands for development tasks | `/generate-tests`, `/check-file`, `/optimize-bundle` |
-| **Agents** | AI specialists for Angular development | Component generation, service creation, routing setup, state management |
-| **MCPs** | External service integrations | GitHub, databases, development tools |
-| **Analytics** | Real-time monitoring dashboard | Live session tracking, usage statistics, exports |
+| Component | Description | Angular Examples |
+|-----------|-------------|------------------|
+| **CLAUDE.md** | Angular project-specific configuration | TypeScript strict mode, RxJS patterns, standalone components |
+| **Commands** | Custom slash commands for Angular tasks | `/generate-component`, `/generate-service`, `/optimize-bundle` |
+| **Agents** | AI specialists for Angular development | `angular/component-generator`, `angular/routing-specialist`, `angular/state-management-expert` |
+| **MCPs** | External Angular integrations | Nx, Angular DevKit, Supabase, GitHub |
+| **Analytics** | Real-time monitoring dashboard | Live Angular session tracking, usage statistics, exports |
 
-## 🛠️ Supported Technologies
+## 🛠️ Angular Focus & Technologies
 
-| Language | Frameworks | Status |
-|----------|------------|---------|
-| **Angular** | Angular 14+, Standalone Components, Signals, RxJS | ✅ Ready |
-| **Python** | Django, Flask, FastAPI | ✅ Ready |
-| **Common** | Universal configurations | ✅ Ready |
-| **Go** | Gin, Echo, Fiber | 🚧 Coming Soon |
-| **Rust** | Axum, Warp, Actix | 🚧 Coming Soon |
+| Technology | Features | Status |
+|------------|----------|---------|
+| **Angular 14+** | Standalone Components, Signals (16+), Angular CLI | ✅ Primary Focus |
+| **TypeScript** | Strict mode, Type inference, Advanced patterns | ✅ Full Support |
+| **RxJS** | Observables, Operators, Subject patterns | ✅ Full Support |
+| **State Management** | NgRx, Signals, Component Store | ✅ Full Support |
+| **Testing** | Karma, Jasmine, Jest, Cypress | ✅ Full Support |
+| **Nx Monorepo** | Nx workspace integration | ✅ Full Support |
+| **Other Frameworks** | React, Vue, Node.js, Python (legacy support) | ⚠️ Limited Support |
 
 ## 🌍 Global Agents (Claude Code SDK Integration)
 
 Create AI agents that can be executed from anywhere using the Claude Code SDK:
 
 ```bash
-# Create a global agent (one-time setup)
-npx claude-code-templates@latest --create-agent customer-support
+# Create a global Angular agent (one-time setup)
+npx angular-code-templates@latest --create-agent angular-component-generator
 
 # Use the agent from anywhere
-customer-support "Help me with ticket #12345"
-sre-logs "Analyze error patterns in app.log"  
-code-reviewer "Review this PR for security issues"
+angular-component-generator "Create a user profile component"
+angular-routing-specialist "Setup lazy loading for admin module"
+angular-performance-optimizer "Analyze and optimize bundle size"
 ```
 
-### Available Global Agents
+### Available Global Angular Agents
 
 | Agent | Usage | Description |
 |-------|-------|-------------|
-| `customer-support` | `customer-support "query"` | AI customer support specialist |
-| `api-security-audit` | `api-security-audit "analyze endpoints"` | Security auditing for APIs |
-| `angular-performance-optimization` | `angular-performance-optimization "optimize components"` | Angular performance expert |
-| `database-optimization` | `database-optimization "improve queries"` | Database performance tuning |
+| `angular-component-generator` | `angular-component-generator "create component"` | Generate Angular components with best practices |
+| `angular-service-specialist` | `angular-service-specialist "create auth service"` | Create Angular services and business logic |
+| `angular-routing-specialist` | `angular-routing-specialist "setup routing"` | Configure Angular routing and navigation |
+| `angular-state-management` | `angular-state-management "implement store"` | NgRx, Signals, RxJS state patterns |
+| `angular-performance-optimizer` | `angular-performance-optimizer "optimize app"` | Angular performance expert |
+| `angular-testing-specialist` | `angular-testing-specialist "write tests"` | Unit, integration, E2E testing for Angular |
 
 ### Global Agent Management
 
 ```bash
 # List installed global agents
-npx claude-code-templates@latest --list-agents
+npx angular-code-templates@latest --list-agents
 
-# Update an agent to latest version
-npx claude-code-templates@latest --update-agent customer-support
+# Update an Angular agent to latest version
+npx angular-code-templates@latest --update-agent angular-component-generator
 
 # Remove an agent
-npx claude-code-templates@latest --remove-agent customer-support
+npx angular-code-templates@latest --remove-agent angular-component-generator
 ```
 
 ### How It Works

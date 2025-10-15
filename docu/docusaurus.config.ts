@@ -96,6 +96,11 @@ const config: Config = {
       },
       items: [
         {
+          href: '/',
+          label: 'Home',
+          position: 'left',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
@@ -123,7 +128,18 @@ const config: Config = {
               label: 'Getting Started',
               to: '/docs/intro',
             },
-            
+            {
+              label: 'CLI Options',
+              to: '/docs/cli-options',
+            },
+            {
+              label: 'Components',
+              to: '/docs/components/overview',
+            },
+            {
+              label: 'Tools',
+              to: '/docs/tools/overview',
+            },
           ],
         },
         {
@@ -154,10 +170,14 @@ const config: Config = {
               label: 'License',
               href: 'https://github.com/davila7/claude-code-templates/blob/main/LICENSE',
             },
+            {
+              label: 'Discord',
+              href: 'https://discord.gg/dyTTwzBhwY',
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Claude Code Templates. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Claude Code Templates. Open source project.`,
     },
     prism: {
       theme: prismThemes.github,
