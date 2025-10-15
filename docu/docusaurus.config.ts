@@ -177,7 +177,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Claude Code Templates. Open source project.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Claude Code Templates. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
