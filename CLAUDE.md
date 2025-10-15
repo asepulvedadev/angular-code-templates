@@ -29,7 +29,7 @@ python generate_components_json.py
 
 ### Deployment
 - Site is automatically deployed to GitHub Pages when changes are pushed to `docs/` directory
-- Deployed at: https://aitmpl.com (davila7.github.io/claude-code-templates)
+- Deployed at: https://aitmpl.com (asepulvedadev.github.io/angular-code-templates)
 - Vercel configuration in `vercel.json` for routing
 
 ## Architecture
