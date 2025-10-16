@@ -7,8 +7,8 @@ const { createClaudeConfig } = require('../src/index');
 
 const pkg = require('../package.json');
 
-const title = 'Claude Code Templates';
-const subtitle = 'Your starting point for Claude Code projects';
+const title = 'Angular Code Templates';
+const subtitle = 'Plantillas profesionales para desarrollo Angular con ASEDEV';
 
 const colorGradient = ['#EA580C', '#F97316', '#FB923C', '#FDBA74', '#FED7AA', '#FFEBD6'];
 
@@ -34,16 +34,16 @@ function showBanner() {
   console.log(chalk.hex('#F97316')('════════════════════════════════════════════════════════════════\n'));
 
   console.log(
-    chalk.hex('#D97706')('🚀 Setup Claude Code for any project language 🚀') +
-    chalk.gray(`\n                             v${pkg.version}\n\n`) +
-    chalk.blue('🌐 Templates: ') + chalk.underline('https://aitmpl.com') + '\n' +
-    chalk.blue('📖 Documentation: ') + chalk.underline('https://docs.aitmpl.com') + '\n'
-  );
+   chalk.hex('#D97706')('🚀 Plantillas profesionales para desarrollo Angular 🚀') +
+   chalk.gray(`\n                             v${pkg.version}\n\n`) +
+   chalk.blue('🌐 Templates: ') + chalk.underline('https://asepulvedadev.github.io/angular-code-templates/') + '\n' +
+   chalk.blue('📖 Documentation: ') + chalk.underline('https://docs.aitmpl.com/') + '\n'
+ );
 }
 
 program
-  .name('create-claude-config')
-  .description('Setup Claude Code configurations and create global AI agents powered by Claude Code SDK')
+  .name('angular-code-templates')
+  .description('Plantillas profesionales para desarrollo Angular con ASEDEV - Configuraciones especializadas para Angular, TypeScript y RxJS')
   .version(require('../package.json').version)
   .option('-l, --language <language>', 'specify programming language (deprecated, use --template)')
   .option('-f, --framework <framework>', 'specify framework (deprecated, use --template)')
