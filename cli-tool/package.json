@@ -1,6 +1,6 @@
 {
   "name": "angular-code-templates",
-  "version": "1.22.0",
+  "version": "1.22.1",
   "description": "Angular Code Templates - Specialized CLI tool for Angular development with Claude Code, featuring Angular-specific agents, commands, and MCPs for enhanced development workflow",
   "main": "src/index.js",
   "bin": {

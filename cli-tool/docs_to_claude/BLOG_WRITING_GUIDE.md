@@ -232,7 +232,7 @@ docs/blog/
 ```html
 <h2>Browse all components on AITMPL.com</h2>
 <p>Before installing, you can explore all available [Technology] components on the official Claude Code Templates website:</p>
-<p>Visit <strong><a href="https://aitmpl.com" target="_blank" rel="noopener">aitmpl.com</a></strong> and search for "[technology]" to see:</p>
+<p>Visit <strong><a href="https://asepulvedadev.github.io/angular-code-templates" target="_blank" rel="noopener">Angular Code Templates</a></strong> and search for "[technology]" to see:</p>
 <img src="../assets/aitmpl-[technology]-search.png" alt="Searching for [Technology] components on AITMPL.com" loading="lazy">
 ```
 

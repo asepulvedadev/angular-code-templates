@@ -171,5 +171,5 @@ npx angular-code-templates@latest --setting statusline/angular-context-monitor
 
 ## Recursos
 
-- [Documentación oficial](https://docs.aitmpl.com)
+- [Documentación oficial](https://asepulvedadev.github.io/angular-code-templates)
 - [Ejemplos en GitHub](https://github.com/asepulvedadev/angular-code-templates)

@@ -37,7 +37,7 @@ function showBanner() {
    chalk.hex('#D97706')('🚀 Plantillas profesionales para desarrollo Angular 🚀') +
    chalk.gray(`\n                             v${pkg.version}\n\n`) +
    chalk.blue('🌐 Templates: ') + chalk.underline('https://asepulvedadev.github.io/angular-code-templates/') + '\n' +
-   chalk.blue('📖 Documentation: ') + chalk.underline('https://docs.aitmpl.com/') + '\n'
+   chalk.blue('📖 Documentation: ') + chalk.underline('https://asepulvedadev.github.io/angular-code-templates/') + '\n'
  );
 }
 

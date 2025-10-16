@@ -192,7 +192,7 @@ class ComponentPageManager {
 
     renderInstallationSection() {
         const componentPath = this.getCleanPath();
-        const basicInstallCommand = `npx claude-code-templates@latest --${this.component.type}=${componentPath} --yes`;
+        const basicInstallCommand = `npx angular-code-templates@latest --${this.component.type}=${componentPath} --yes`;
         
         // Update basic installation command
         const basicInstallElement = document.getElementById('basicInstallCommand');
@@ -216,7 +216,7 @@ class ComponentPageManager {
 
     renderGlobalAgentSection(componentPath) {
         const globalAgentSection = document.getElementById('globalAgentSection');
-        const globalAgentCommand = `npx claude-code-templates@latest --create-agent ${componentPath}`;
+        const globalAgentCommand = `npx angular-code-templates@latest --create-agent ${componentPath}`;
         const globalUsageCommand = `${componentPath.split('/').pop()} "your prompt here"`;
 
         const globalAgentCommandElement = document.getElementById('globalAgentCommand');
@@ -236,7 +236,7 @@ class ComponentPageManager {
 
     renderE2BSandboxSection(componentPath) {
         const e2bSandboxSection = document.getElementById('e2bSandboxSection');
-        const e2bSandboxCommand = `npx claude-code-templates@latest --sandbox e2b --agent=${componentPath} --prompt "your development task"`;
+        const e2bSandboxCommand = `npx angular-code-templates@latest --sandbox e2b --agent=${componentPath} --prompt "your development task"`;
 
         const e2bSandboxCommandElement = document.getElementById('e2bSandboxCommand');
         if (e2bSandboxCommandElement) {

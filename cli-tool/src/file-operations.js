@@ -6,8 +6,8 @@ const { getHooksForLanguage, filterHooksBySelection, getMCPsForLanguage, filterM
 
 // GitHub configuration for downloading templates
 const GITHUB_CONFIG = {
-  owner: 'davila7',
-  repo: 'claude-code-templates',
+  owner: 'asepulvedadev',
+  repo: 'angular-code-templates',
   branch: 'main',
   templatesPath: 'cli-tool/templates'
 };

@@ -18,7 +18,7 @@ let workflowState = {
 // GitHub API configuration
 const GITHUB_CONFIG = {
     owner: 'davila7',
-    repo: 'claude-code-templates',
+    repo: 'angular-code-templates',
     branch: 'main'
 };
 
@@ -413,7 +413,7 @@ function generateWorkflowYAML() {
 }
 
 function showGenerateModal(hash, yaml) {
-    document.getElementById('workflowCommand').textContent = `npx claude-code-templates@latest --workflow:#${hash}`;
+    document.getElementById('workflowCommand').textContent = `npx angular-code-templates@latest --workflow:#${hash}`;
     document.getElementById('yamlContent').textContent = yaml;
     document.getElementById('generateModal').style.display = 'block';
 }
@@ -505,7 +505,7 @@ function formatComponentName(name) {
 }
 
 function generateInstallCommand(component) {
-    return `npx claude-code-templates@latest --${component.type} "${component.path}"`;
+    return `npx angular-code-templates@latest --${component.type} "${component.path}"`;
 }
 
 function getComponentDescription(component) {

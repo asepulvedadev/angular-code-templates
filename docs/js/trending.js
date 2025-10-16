@@ -662,7 +662,7 @@ function showInstallModal(componentName) {
     const componentPath = componentCategory ? `${componentCategory}/${cleanName}` : cleanName;
 
     // Update the command with the correct flag and full component path
-    const command = `npx claude-code-templates@latest --${flagType} ${componentPath} --yes`;
+    const command = `npx angular-code-templates@latest --${flagType} ${componentPath} --yes`;
     commandText.textContent = command;
 
     // Show the modal

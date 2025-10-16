@@ -308,9 +308,19 @@ class IndexPageManager {
         if (type === 'templates') {
             return [];
         }
-        
+
         let components = this.componentsData[type] || [];
-        
+
+        // Add 'type' property to each component if it doesn't have one
+        // Convert plural type to singular (agents -> agent, commands -> command, etc.)
+        const singularType = type.endsWith('s') ? type.slice(0, -1) : type;
+        components = components.map(component => {
+            if (!component.type) {
+                return { ...component, type: singularType };
+            }
+            return component;
+        });
+
         // Apply category filter if not 'all'
         if (this.currentCategoryFilter !== 'all') {
             components = components.filter(component => {
@@ -318,10 +328,10 @@ class IndexPageManager {
                 return category === this.currentCategoryFilter;
             });
         }
-        
+
         // Apply sorting
         components = this.sortComponents(components);
-        
+
         return components;
     }
     
@@ -648,7 +658,7 @@ class IndexPageManager {
         if (componentPath.endsWith('.json')) {
             componentPath = componentPath.replace(/\.json$/, '');
         }
-        const installCommand = `npx claude-code-templates@latest --${component.type}=${componentPath} --yes`;
+        const installCommand = `npx angular-code-templates@latest --${component.type}=${componentPath} --yes`;
         
         const typeConfig = {
             agent: { icon: '🤖', color: '#ff6b6b' },
@@ -657,11 +667,23 @@ class IndexPageManager {
             setting: { icon: '⚙️', color: '#9c88ff' },
             hook: { icon: '🪝', color: '#ff8c42' }
         };
-        
+
+        // Validate component has required properties
+        if (!component || !component.type) {
+            console.error('Invalid component data:', component);
+            return '';
+        }
+
         const config = typeConfig[component.type];
-        
+
+        // Additional validation for config
+        if (!config) {
+            console.error('Unknown component type:', component.type);
+            return '';
+        }
+
         // Escape quotes and special characters for onclick attributes
-        const escapedType = component.type.replace(/'/g, "\\'");
+        const escapedType = (component.type || '').replace(/'/g, "\\'");
         const escapedName = (component.name || '').replace(/'/g, "\\'");
         const escapedPath = (component.path || component.name || '').replace(/'/g, "\\'");
         const escapedCategory = (component.category || 'general').replace(/'/g, "\\'");
@@ -1044,7 +1066,7 @@ class IndexPageManager {
     async fetchTemplatesConfig() {
         const GITHUB_CONFIG = {
             owner: 'davila7',
-            repo: 'claude-code-templates',
+            repo: 'angular-code-templates',
             branch: 'main',
             templatesPath: 'cli-tool/src/templates.js'
         };
@@ -1667,8 +1689,8 @@ function showComponentContributeModal(type) {
                                 <h4>Test Your Template</h4>
                                 <p>Test your template installation:</p>
                                 <div class="step-command">
-                                    <code>npx claude-code-templates@latest --template=your-template-name --yes</code>
-                                    <button class="copy-btn" onclick="copyToClipboard('npx claude-code-templates@latest --template=your-template-name --yes')">Copy</button>
+                                    <code>npx angular-code-templates@latest --template=your-template-name --yes</code>
+                                    <button class="copy-btn" onclick="copyToClipboard('npx angular-code-templates@latest --template=your-template-name --yes')">Copy</button>
                                 </div>
                             </div>
                         </div>

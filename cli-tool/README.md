@@ -106,18 +106,18 @@ The agents use the Claude Code SDK internally to provide specialized AI assistan
 
 ## 📖 Documentation
 
-**[📚 Complete Documentation](https://docs.aitmpl.com/)** - Comprehensive guides, examples, and API reference
+**[📚 Complete Documentation](https://asepulvedadev.github.io/angular-code-templates/)** - Comprehensive guides, examples, and API reference
 
 Quick links:
-- [Getting Started](https://docs.aitmpl.com/docs/intro) - Installation and first steps
-- [Project Setup](https://docs.aitmpl.com/docs/project-setup/interactive-setup) - Configure your projects
-- [Analytics Dashboard](https://docs.aitmpl.com/docs/analytics/overview) - Real-time monitoring
-- [Individual Components](https://docs.aitmpl.com/docs/components/overview) - Agents, Commands, MCPs
-- [CLI Options](https://docs.aitmpl.com/docs/cli-options) - All available commands
+- [Getting Started](https://asepulvedadev.github.io/angular-code-templates/) - Installation and first steps
+- [Project Setup](https://asepulvedadev.github.io/angular-code-templates/) - Configure your projects
+- [Analytics Dashboard](https://asepulvedadev.github.io/angular-code-templates/) - Real-time monitoring
+- [Individual Components](https://asepulvedadev.github.io/angular-code-templates/) - Agents, Commands, MCPs
+- [CLI Options](https://asepulvedadev.github.io/angular-code-templates/) - All available commands
 
 ## 🤝 Contributing
 
-We welcome contributions! Browse available templates and components at **[aitmpl.com](https://aitmpl.com)**, then check our [contributing guidelines](https://github.com/asepulvedadev/angular-code-templates/blob/main/CONTRIBUTING.md).
+We welcome contributions! Browse available templates and components at **[asepulvedadev.github.io/angular-code-templates](https://asepulvedadev.github.io/angular-code-templates/)**, then check our [contributing guidelines](https://github.com/asepulvedadev/angular-code-templates/blob/main/CONTRIBUTING.md).
 
 ## 📄 License
 
@@ -125,8 +125,8 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
-- **🌐 Browse Components**: [aitmpl.com](https://aitmpl.com)
-- **📚 Documentation**: [docs.aitmpl.com](https://docs.aitmpl.com)
+- **🌐 Browse Components**: [asepulvedadev.github.io/angular-code-templates](https://asepulvedadev.github.io/angular-code-templates/)
+- **📚 Documentation**: [asepulvedadev.github.io/angular-code-templates](https://asepulvedadev.github.io/angular-code-templates/)
 - **🐛 Issues**: [GitHub Issues](https://github.com/asepulvedadev/angular-code-templates/issues)
 - **💬 Discussions**: [GitHub Discussions](https://github.com/asepulvedadev/angular-code-templates/discussions)
 

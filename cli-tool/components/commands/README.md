@@ -86,5 +86,5 @@ npx angular-code-templates@latest --command angular/nombre-comando
 
 ## Recursos
 
-- [Documentación oficial](https://docs.aitmpl.com)
+- [Documentación oficial](https://asepulvedadev.github.io/angular-code-templates)
 - [Ejemplos en GitHub](https://github.com/asepulvedadev/angular-code-templates)

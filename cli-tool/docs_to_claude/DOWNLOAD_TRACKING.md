@@ -126,7 +126,7 @@ CCT_DEBUG=true node cli-tool/bin/create-claude-config.js --agent deep-research-t
 CCT_NO_TRACKING=true node cli-tool/bin/create-claude-config.js --agent test-agent
 
 # Test directo al API
-curl -X POST https://www.aitmpl.com/api/track-download-supabase \
+curl -X POST https://asepulvedadev.github.io/angular-code-templates/api/track-download-supabase \
   -H "Content-Type: application/json" \
   -d '{"type":"agent","name":"test","path":"test","category":"test","cliVersion":"1.19.0"}'
 ```
