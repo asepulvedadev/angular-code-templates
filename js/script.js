@@ -1,7 +1,7 @@
 // GitHub repository configuration
 const GITHUB_CONFIG = {
     owner: 'davila7',
-    repo: 'claude-code-templates',
+    repo: 'angular-code-templates',
     branch: 'main',
     templatesPath: 'cli-tool/src/templates.js'
 };
@@ -129,7 +129,7 @@ function generateTemplateCards() {
         const baseCard = createTemplateCard(languageKey, languageData, 'none', {
             name: languageData.name,
             icon: getFrameworkIcon(languageKey),
-            command: `npx claude-code-templates@latest --template=${languageKey} --yes`
+            command: `npx angular-code-templates@latest --template=${languageKey} --yes`
         });
         grid.appendChild(baseCard);
         
@@ -139,7 +139,7 @@ function generateTemplateCards() {
                 const frameworkCard = createTemplateCard(languageKey, languageData, frameworkKey, {
                     name: frameworkData.name,
                     icon: getFrameworkIcon(frameworkKey),
-                    command: `npx claude-code-templates@latest --template=${languageKey} --yes`
+                    command: `npx angular-code-templates@latest --template=${languageKey} --yes`
                 });
                 grid.appendChild(frameworkCard);
             });
@@ -529,8 +529,8 @@ function showContributeModal() {
                                 <h4>Fork the Repository</h4>
                                 <p>Go to the <a href="https://github.com/asepulvedadev/angular-code-templates" target="_blank">main repository</a> and click "Fork" to create your own copy.</p>
                                 <div class="step-command">
-                                    <code>git clone https://github.com/YOUR_USERNAME/claude-code-templates.git</code>
-                                    <button class="copy-btn" onclick="copyToClipboard('git clone https://github.com/YOUR_USERNAME/claude-code-templates.git')">Copy</button>
+                                    <code>git clone https://github.com/YOUR_USERNAME/angular-code-templates.git</code>
+                                    <button class="copy-btn" onclick="copyToClipboard('git clone https://github.com/YOUR_USERNAME/angular-code-templates.git')">Copy</button>
                                 </div>
                             </div>
                         </div>
@@ -560,7 +560,7 @@ function showContributeModal() {
                                 <div class="claude-prompt">
                                     <h5>📋 Claude Code Prompt:</h5>
                                     <div class="prompt-text">
-                                        <pre>I want to contribute a new template to the claude-code-templates repository. 
+                                        <pre>I want to contribute a new template to the angular-code-templates repository. 
 
 Please help me create:
 - A new [LANGUAGE/FRAMEWORK] template
@@ -1500,15 +1500,15 @@ function createComponentCard(component) {
 // Generate install command for component
 function generateInstallCommand(component) {
     if (component.type === 'agent') {
-        return `npx claude-code-templates@latest --agent=${component.name} --yes`;
+        return `npx angular-code-templates@latest --agent=${component.name} --yes`;
     } else if (component.type === 'command') {
-        return `npx claude-code-templates@latest --command=${component.name} --yes`;
+        return `npx angular-code-templates@latest --command=${component.name} --yes`;
     } else if (component.type === 'mcp') {
         // Remove .json extension from MCP names for the command
         const mcpName = component.name.replace(/\.json$/, '');
-        return `npx claude-code-templates@latest --mcp=${mcpName} --yes`;
+        return `npx angular-code-templates@latest --mcp=${mcpName} --yes`;
     }
-    return `npx claude-code-templates@latest`;
+    return `npx angular-code-templates@latest`;
 }
 
 

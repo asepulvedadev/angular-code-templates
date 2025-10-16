@@ -141,7 +141,7 @@ class PluginPageManager {
             .join('');
 
         // Update installation commands
-        document.getElementById('installPluginCmd').textContent = `/plugin install ${plugin.name}@claude-code-templates`;
+        document.getElementById('installPluginCmd').textContent = `/plugin install ${plugin.name}@angular-code-templates`;
 
         // Render components sections
         this.renderComponents(plugin);
@@ -205,7 +205,7 @@ class PluginPageManager {
 
         return componentNames.map((name, index) => {
             const formattedName = this.formatComponentName(name);
-            const installCommand = `npx claude-code-templates@latest --${componentType} ${name}`;
+            const installCommand = `npx angular-code-templates@latest --${componentType} ${name}`;
 
             return `
                 <li class="component-item" data-index="${index}">

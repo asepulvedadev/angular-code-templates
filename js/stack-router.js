@@ -280,7 +280,7 @@ class StackRouter {
     generateStackInstallCommand(components) {
         const allComponents = [...components.agents, ...components.commands, ...components.mcps];
         const componentArgs = allComponents.map(c => `--${c.type} ${c.name}`).join(' ');
-        return `npx claude-code-templates@latest ${componentArgs}`;
+        return `npx angular-code-templates@latest ${componentArgs}`;
     }
 
     // Update header for stack page

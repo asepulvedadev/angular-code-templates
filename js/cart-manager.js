@@ -293,7 +293,7 @@ class CartManager {
 
     // Update generated command
     updateCommand() {
-        let command = 'npx claude-code-templates@latest';
+        let command = 'npx angular-code-templates@latest';
         
         if (this.cart.agents.length > 0) {
             const agentPaths = this.cart.agents.map(item => this.getCleanPath(item.path)).join(',');
