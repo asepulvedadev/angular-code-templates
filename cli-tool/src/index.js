@@ -349,7 +349,7 @@ async function createClaudeConfig(options = {}) {
   console.log(chalk.white('  2. Customize the configuration for your project'));
   console.log(chalk.white('  3. Start using Claude Code with: claude'));
   console.log('');
-  console.log(chalk.blue('🌐 View all available templates at: https://aitmpl.com/'));
+  console.log(chalk.blue('🌐 View all available templates at: https://asepulvedadev.github.io/angular-code-templates/'));
   console.log(chalk.blue('📖 Read the complete documentation at: https://docs.aitmpl.com/'));
   
   if (config.language !== 'common') {
@@ -398,11 +398,11 @@ async function installIndividualAgent(agentName, targetDir, options) {
     // Support both category/agent-name and direct agent-name formats
     let githubUrl;
     if (agentName.includes('/')) {
-      // Category/agent format: deep-research-team/academic-researcher
+      // Category/agent format: angular/angular-component-generator
       githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/agents/${agentName}.md`;
     } else {
-      // Direct agent format: api-security-audit
-      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/agents/${agentName}.md`;
+      // Direct agent format: angular-component-generator
+      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/agents/angular/${agentName}.md`;
     }
     
     console.log(chalk.gray(`📥 Downloading from GitHub (main branch)...`));
@@ -463,11 +463,11 @@ async function installIndividualCommand(commandName, targetDir, options) {
     // Support both category/command-name and direct command-name formats
     let githubUrl;
     if (commandName.includes('/')) {
-      // Category/command format: security/vulnerability-scan
+      // Category/command format: angular/component-generator
       githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/commands/${commandName}.md`;
     } else {
-      // Direct command format: check-file
-      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/commands/${commandName}.md`;
+      // Direct command format: component-generator
+      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/commands/angular/${commandName}.md`;
     }
     
     console.log(chalk.gray(`📥 Downloading from GitHub (main branch)...`));
@@ -529,11 +529,11 @@ async function installIndividualMCP(mcpName, targetDir, options) {
     // Support both category/mcp-name and direct mcp-name formats
     let githubUrl;
     if (mcpName.includes('/')) {
-      // Category/mcp format: database/mysql-integration
+      // Category/mcp format: angular/http-client
       githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/mcps/${mcpName}.json`;
     } else {
-      // Direct mcp format: web-fetch
-      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/mcps/${mcpName}.json`;
+      // Direct mcp format: http-client
+      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/mcps/angular/${mcpName}.json`;
     }
     
     console.log(chalk.gray(`📥 Downloading from GitHub (main branch)...`));
@@ -615,11 +615,11 @@ async function installIndividualSetting(settingName, targetDir, options) {
     // Support both category/setting-name and direct setting-name formats
     let githubUrl;
     if (settingName.includes('/')) {
-      // Category/setting format: permissions/allow-npm-commands
+      // Category/setting format: angular/strict-mode
       githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/settings/${settingName}.json`;
     } else {
-      // Direct setting format: allow-npm-commands
-      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/settings/${settingName}.json`;
+      // Direct setting format: strict-mode
+      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/settings/angular/${settingName}.json`;
     }
     
     console.log(chalk.gray(`📥 Downloading from GitHub (main branch)...`));
@@ -945,11 +945,11 @@ async function installIndividualHook(hookName, targetDir, options) {
     // Support both category/hook-name and direct hook-name formats
     let githubUrl;
     if (hookName.includes('/')) {
-      // Category/hook format: pre-tool/backup-before-edit
+      // Category/hook format: angular/lint-on-save
       githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/hooks/${hookName}.json`;
     } else {
-      // Direct hook format: backup-before-edit
-      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/hooks/${hookName}.json`;
+      // Direct hook format: lint-on-save
+      githubUrl = `https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/hooks/angular/${hookName}.json`;
     }
     
     console.log(chalk.gray(`📥 Downloading from GitHub (main branch)...`));
@@ -1295,25 +1295,25 @@ async function getAvailableAgentsFromGitHub() {
       }
     }
     
-    // Fallback to aitmpl.com API if local file not found
+    // Fallback to angular-code-templates API if local file not found
     try {
-      // Try aitmpl.com API first
-      const apiResponse = await fetch('https://aitmpl.com/api/agents.json');
+      // Try angular-code-templates API first
+      const apiResponse = await fetch('https://asepulvedadev.github.io/angular-code-templates/api/agents.json');
       if (apiResponse.ok) {
         const apiData = await apiResponse.json();
-        
+
         if (apiData.agents && Array.isArray(apiData.agents)) {
-          console.log(chalk.green(`✅ Loaded ${apiData.agents.length} agents from aitmpl.com API`));
+          console.log(chalk.green(`✅ Loaded ${apiData.agents.length} agents from angular-code-templates API`));
           return apiData.agents;
         }
       }
     } catch (apiError) {
-      console.warn('Could not fetch from aitmpl.com, trying GitHub API...');
+      console.warn('Could not fetch from angular-code-templates, trying GitHub API...');
     }
     
-    // If aitmpl.com API fails, try GitHub API as secondary fallback
+    // If angular-code-templates API fails, try GitHub API as secondary fallback
     console.log(chalk.yellow('⚠️  Falling back to GitHub API...'));
-    const response = await fetch('https://api.github.com/repos/asepulvedadev/angular-code-templates/contents/cli-tool/components/agents');
+    const response = await fetch('https://api.github.com/repos/asepulvedadev/angular-code-templates/contents/cli-tool/components/agents/angular');
     if (!response.ok) {
       // Check for rate limit error
       if (response.status === 403) {
@@ -1322,21 +1322,11 @@ async function getAvailableAgentsFromGitHub() {
           console.log(chalk.red('❌ GitHub API rate limit exceeded'));
           console.log(chalk.yellow('💡 Install locally with: npm install -g claude-code-templates'));
           
-          // Return comprehensive fallback list
+          // Return Angular-specific fallback list
           return [
-            { name: 'frontend-developer', path: 'development-team/frontend-developer', category: 'development-team' },
-            { name: 'backend-developer', path: 'development-team/backend-developer', category: 'development-team' },
-            { name: 'fullstack-developer', path: 'development-team/fullstack-developer', category: 'development-team' },
-            { name: 'devops-engineer', path: 'development-team/devops-engineer', category: 'development-team' },
-            { name: 'nextjs-architecture-expert', path: 'web-tools/nextjs-architecture-expert', category: 'web-tools' },
-            { name: 'react-developer', path: 'web-tools/react-developer', category: 'web-tools' },
-            { name: 'vue-developer', path: 'web-tools/vue-developer', category: 'web-tools' },
-            { name: 'data-scientist', path: 'data-analytics/data-scientist', category: 'data-analytics' },
-            { name: 'data-analyst', path: 'data-analytics/data-analyst', category: 'data-analytics' },
-            { name: 'security-auditor', path: 'security/security-auditor', category: 'security' },
-            { name: 'api-security-audit', path: 'api-security-audit', category: 'root' },
-            { name: 'database-optimization', path: 'database-optimization', category: 'root' },
-            { name: 'react-performance-optimization', path: 'react-performance-optimization', category: 'root' }
+            { name: 'angular-component-generator', path: 'angular/angular-component-generator', category: 'angular' },
+            { name: 'angular-service-generator', path: 'angular/angular-service-generator', category: 'angular' },
+            { name: 'angular-performance-optimizer', path: 'angular/angular-performance-optimizer', category: 'angular' }
           ];
         }
       }
@@ -1379,14 +1369,11 @@ async function getAvailableAgentsFromGitHub() {
     return agents;
   } catch (error) {
     console.warn('Warning: Could not fetch agents, using fallback list');
-    // Comprehensive fallback list if all methods fail
+    // Angular-specific fallback list if all methods fail
     return [
-      { name: 'frontend-developer', path: 'development-team/frontend-developer', category: 'development-team' },
-      { name: 'backend-developer', path: 'development-team/backend-developer', category: 'development-team' },
-      { name: 'fullstack-developer', path: 'development-team/fullstack-developer', category: 'development-team' },
-      { name: 'api-security-audit', path: 'api-security-audit', category: 'root' },
-      { name: 'database-optimization', path: 'database-optimization', category: 'root' },
-      { name: 'react-performance-optimization', path: 'react-performance-optimization', category: 'root' }
+      { name: 'angular-component-generator', path: 'angular/angular-component-generator', category: 'angular' },
+      { name: 'angular-service-generator', path: 'angular/angular-service-generator', category: 'angular' },
+      { name: 'angular-performance-optimizer', path: 'angular/angular-performance-optimizer', category: 'angular' }
     ];
   }
 }
@@ -1595,12 +1582,12 @@ async function installMultipleComponents(options, targetDir) {
  * Show available agents organized by category
  */
 async function showAvailableAgents() {
-  console.log(chalk.yellow('\n📋 Available Agents:'));
-  console.log(chalk.gray('Use format: category/agent-name or just agent-name for root level\n'));
+  console.log(chalk.yellow('\n📋 Available Angular Agents:'));
+  console.log(chalk.gray('Especializados en desarrollo Angular con ASEDEV\n'));
   console.log(chalk.gray('⏳ Fetching latest agents from GitHub...\n'));
-  
+
   const agents = await getAvailableAgentsFromGitHub();
-  
+
   // Group agents by category
   const groupedAgents = agents.reduce((acc, agent) => {
     const category = agent.category === 'root' ? '🤖 General Agents' : `📁 ${agent.category}`;
@@ -1608,7 +1595,7 @@ async function showAvailableAgents() {
     acc[category].push(agent);
     return acc;
   }, {});
-  
+
   // Display agents by category
   Object.entries(groupedAgents).forEach(([category, categoryAgents]) => {
     console.log(chalk.cyan(category));
@@ -1617,10 +1604,10 @@ async function showAvailableAgents() {
     });
     console.log('');
   });
-  
+
   console.log(chalk.blue('Examples:'));
-  console.log(chalk.gray('  cct --agent api-security-audit'));
-  console.log(chalk.gray('  cct --agent deep-research-team/academic-researcher'));
+  console.log(chalk.gray('  cct --agent angular-component-generator'));
+  console.log(chalk.gray('  cct --agent angular/angular-service-generator'));
   console.log('');
 }
 
@@ -2470,7 +2457,7 @@ async function executeSandbox(options, targetDir) {
       } else {
         // Fallback to downloading from GitHub if not found locally
         console.log(chalk.gray('📥 Downloading E2B component files from GitHub...'));
-        
+    
         const baseUrl = 'https://raw.githubusercontent.com/asepulvedadev/angular-code-templates/main/cli-tool/components/sandbox/e2b';
         
         // Download launcher script
